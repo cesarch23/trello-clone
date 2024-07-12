@@ -1,0 +1,53 @@
+<div class="login">
+    <div class="login__background">
+        <img class="login__background-img login__background--left" src="/assets/svg/app.svg" alt="app">
+        <img class="login__background-img login__background--right" src="/assets/svg/slider.svg" alt="slider ">
+    </div>
+    <div class="login__content">
+        <header class="login__logo">
+            <img src="/assets/images/logo/Trello/trello-logo-gradient-blue-attribution_rgb.svg" alt="trello logo">
+        </header>
+        <span class="login__subtitle">Inicia sesión para continuar</span>
+        <form action="#" class="form">
+            <input class="form__field" type="text" placeholder="Introduce tu correo electrónico">
+            <input class="form__field" type="text" placeholder="Introduce tu contraseña">
+            <app-btn [typeButton]="'submit'" routerLink="/boards/board" > log in </app-btn>
+        </form>
+        <span class="login__subtitle login__subtitle-color">O continúa con: </span>
+        <div class="social">
+            <button class="social__button" type="button">
+                <span class="social__logo">
+                    <img class="social__logo" src="/assets/images/logo/google/google-logo.svg" alt="google logo">
+                </span>
+                <span>Google</span>
+            </button>
+            <button class="social__button" type="button">
+                <span>
+                    <img class="social__logo" src="/assets/images/logo/microsoft/microsoft-logo.svg" alt="microsoft logo">
+                </span>
+                <span>Microsoft</span>
+            </button>
+            <button class="social__button" type="button">
+                <span>
+                    <img class="social__logo" src="/assets/images/logo/apple/apple-logo.svg" alt="apple logo">
+                </span>
+                <span>Apple</span>
+            </button>
+            <button class="social__button" type="button">
+                <span>
+                    <img class="social__logo" src="/assets/images/logo/slack/slack-logo.svg" alt="slack logo">
+                </span>
+                <span>Slack</span>
+            </button>
+
+        </div>
+        <div class="login__options">
+            <a class="login__option" href="#" >¿No puedes iniciar sesión?</a>
+            <a class="login__option" href="#" >Crear una cuenta </a>
+            
+        </div>
+        <hr class="login__hr">
+        <div class="login__terms">
+        </div>
+    </div>
+</div>
