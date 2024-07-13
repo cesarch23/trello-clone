@@ -5,6 +5,16 @@
     --dark-neutral-color:#DCDFE4;
     --gray-color:#5e6c84;
     --border-radius:.2rem;
+
+    --button-text-color:#44546F;
+    --button-background-hovered:#091e4218;
+
+    --button-pressed:#091e4235;
+
+    --button-background-selected:#e9f2ff;
+    --button-text-seleted:#0c66e4;
+
+    --profile-background-color:#ff991f;
 }
 *{
     box-sizing: border-box;  
