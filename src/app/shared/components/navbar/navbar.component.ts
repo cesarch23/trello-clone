@@ -15,6 +15,8 @@ export class NavbarComponent {
   faUserGroup=faUserGroup;
 
   isOpenOverlayProfile:boolean = false;
-  isOpenOverlayWorkspaces=false;
+  isOpenOverlayWorkspaces:boolean=false;
+
+
 
 }

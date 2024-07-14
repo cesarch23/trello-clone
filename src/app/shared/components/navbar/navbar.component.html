@@ -64,7 +64,9 @@
 cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="profile"
 [cdkConnectedOverlayOpen]="isOpenOverlayProfile"
-[cdkConnectedOverlayOffsetY]="8"    
+[cdkConnectedOverlayOffsetY]="8"
+(overlayOutsideClick)="isOpenOverlayProfile=!isOpenOverlayProfile"    
+hasBackdrop="true"    
 > 
 <div class="overlay">
     <div class="overlay__account">
@@ -132,7 +134,9 @@ cdkConnectedOverlay
 cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="workspaces"
 [cdkConnectedOverlayOpen]="isOpenOverlayWorkspaces"
-[cdkConnectedOverlayOffsetY]="8"    
+[cdkConnectedOverlayOffsetY]="8"
+(overlayOutsideClick)="isOpenOverlayWorkspaces=!isOpenOverlayWorkspaces"    
+hasBackdrop="true"
 > 
 <div class="overlay">
     <p>apsd </p>
