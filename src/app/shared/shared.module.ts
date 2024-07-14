@@ -5,13 +5,15 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OverlayWorkspacesComponent } from './components/navbar/components/overlay-workspaces/overlay-workspaces.component';
 
 
 @NgModule({
   declarations: [
     BtnComponent,
     NotFoundPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    OverlayWorkspacesComponent
   ],
   imports: [
     CommonModule,

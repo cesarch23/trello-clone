@@ -188,7 +188,6 @@
  }
  
  .overlay__subtitle{
-    color: var(--button-text-color);
     padding: 0 2rem;
  }
  .account-details{
@@ -214,6 +213,7 @@
      text-align: start;
      border: none;
      cursor: pointer;
+     color: var(--ds-text);
    
  }
  .overlay__button:hover{

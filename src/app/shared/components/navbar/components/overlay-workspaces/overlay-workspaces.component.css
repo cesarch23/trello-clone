@@ -1,0 +1,41 @@
+.overlay-work{
+    padding: .8rem;
+
+    border: .1rem solid var(--dark-neutral-color);
+    background-color: white;
+    box-shadow: 0 0 .8rem .1rem rgb(230, 230, 230);
+    border-radius: var(--border-radius);
+}
+.overlay-work__button{
+    border: none;
+    border-radius: var(--border-radius);
+    background: none;
+
+    padding: .8rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--button-text-color);
+    gap: 1.2rem;
+    cursor: pointer;
+    /* width: 100%; */
+    
+}
+.overlay-work__button:hover{
+    background-color: var(--button-background-hovered);
+}
+.overlay-work__button--text-overflow{
+    max-width: 16rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.overlay__e{
+    font-size: 2rem;
+    width: 4rem; height: 4rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: linear-gradient(#6E5DC6,#0C66E4);
+    color: #ffffff;
+}

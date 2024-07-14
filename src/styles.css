@@ -17,6 +17,9 @@
     --button-text-seleted:#0c66e4;
 
     --profile-background-color:#ff991f;
+
+    --h4-color:#626F86;
+    --ds-text:#172B4D;
 }
 *{
     box-sizing: border-box;  
@@ -40,9 +43,10 @@ a{
     max-width: 120rem;
     margin: 0 auto;
 }
-h1, h2, h3, h4{
+h4{
     margin: .8rem 0;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--h4-color);
 }
 h1{
     font-size: 2.2rem;
