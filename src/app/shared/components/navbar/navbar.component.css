@@ -141,7 +141,6 @@
     }
     
     .search{
-        background-color: red;
         display:flex;
         align-items: center;
         position: relative;
@@ -170,3 +169,72 @@
     
     
 }
+/* Overlay account*/
+ .overlay{
+
+    border: .1rem solid var(--dark-neutral-color);
+    background-color: white;
+    box-shadow: 0 0 .8rem .1rem rgb(230, 230, 230);
+    border-radius: var(--border-radius);
+ }
+ .overlay__account, .overlay__trello,
+ .overlay__workspace, .overlay__helps,.overlay__logout {
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    padding-bottom: .8rem;
+    border-bottom: .2rem solid var(--dark-neutral-color);
+    
+ }
+ 
+ .overlay__subtitle{
+    color: var(--button-text-color);
+    padding: 0 2rem;
+ }
+ .account-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .6rem;
+    padding: 0 2rem;
+ }
+ .account-details__logo{
+    font-size: 2rem;
+    font-weight: 500;
+    padding: .6rem;
+    border-radius: 50%;
+    background-color:var(--profile-background-color) ;
+ }
+ .overlay__button{
+   
+     padding: .8rem 2rem;
+     background-color: unset;
+     font-size: 1.4rem;
+     text-align: start;
+     border: none;
+     cursor: pointer;
+   
+ }
+ .overlay__button:hover{
+    background-color: var(--button-background-hovered);
+ }
+ .overlay__button:active{
+    background-color: var(--button-pressed);
+ }
+ .overlay__button-icon{
+    display: flex;
+    justify-content: space-between;
+ }
+ .overlay__trello{
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    padding-bottom: .8rem;
+    border-bottom: .2rem solid var(--dark-neutral-color);
+     
+ }
+ .overlay__workspace, .overlay__helps, .overlay__logout{
+    padding-top: .8rem;
+ }
+ 

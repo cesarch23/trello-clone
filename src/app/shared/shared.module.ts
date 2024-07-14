@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { BtnComponent } from './components/btn/btn.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import {OverlayModule} from '@angular/cdk/overlay';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    OverlayModule,
+    FontAwesomeModule,
   ],
   exports:[
     BtnComponent,

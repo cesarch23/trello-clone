@@ -49,10 +49,77 @@
         <button class="nav__help">
             <img src="/assets/icons/help-icon.svg" alt="help icon">
         </button>
-        <button class="nav__profile">
+        <button class="nav__profile" (click)="isOpen=!isOpen" cdkOverlayOrigin #profile="cdkOverlayOrigin">
             <span class="nav__content">CC</span>
         </button>
          
     </div>
 
 </nav>
+
+<ng-template #profile
+cdkConnectedOverlay
+[cdkConnectedOverlayOrigin]="profile"
+[cdkConnectedOverlayOpen]="isOpen"    
+> 
+<div class="overlay">
+    <div class="overlay__account">
+        <h4 class="overlay__subtitle">ACCOUNT</h4>
+        <div class="account-details">
+            <p class="account-details__logo">
+                CC
+            </p>
+            <div >
+                <p>cesar choccta</p>
+                <p>choccata271@gmail.com</p>
+            </div>
+        </div>
+        <button class="overlay__button">
+            Switch account
+        </button>
+        <button class="overlay__button overlay__button-icon">
+            <span>Manage account</span> <fa-icon [icon]="faArrowUpRight" title="open in new"></fa-icon>   
+            
+        </button>
+    </div>
+     
+    <div class="overlay__trello">
+        <h3 class="overlay__subtitle">Trello</h3>
+        <button class="overlay__button overlay__profile-visibility">
+            Profile and visibility
+        </button>
+        <button class="overlay__button overlay__activity">
+            Activity
+        </button>
+        <button class="overlay__button">
+            Cards
+        </button>
+        <button class="overlay__button">
+            Settings
+        </button>
+        <button class="overlay__button overlay__button-icon">
+            <span>Theme</span> <fa-icon [icon]="faChevronRight" title="open options"></fa-icon>
+        </button>
+    </div>
+   
+    <div class="overlay__workspace">
+        <button class="overlay__button">
+            <fa-icon [icon]="faUserGroup" title="create workspace"></fa-icon> Create Workspace
+        </button>
+    </div>
+    <div class="overlay__helps">
+        <button class="overlay__button">
+            Help
+        </button>
+        <button class="overlay__button">
+            Shortcuts
+        </button>
+    </div>
+    <div class="overlay__logout">
+        <button class="overlay__button">
+            Log out
+        </button>
+    </div>
+
+</div>
+</ng-template>
