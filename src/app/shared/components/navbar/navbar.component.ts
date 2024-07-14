@@ -17,6 +17,6 @@ export class NavbarComponent {
   isOpenOverlayProfile:boolean = false;
   isOpenOverlayWorkspaces:boolean=false;
 
-
+ 
 
 }

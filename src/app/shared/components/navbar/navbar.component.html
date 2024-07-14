@@ -65,8 +65,7 @@ cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="profile"
 [cdkConnectedOverlayOpen]="isOpenOverlayProfile"
 [cdkConnectedOverlayOffsetY]="8"
-(overlayOutsideClick)="isOpenOverlayProfile=!isOpenOverlayProfile"    
-hasBackdrop="true"    
+  
 > 
 <div class="overlay">
     <div class="overlay__account">
@@ -90,7 +89,7 @@ hasBackdrop="true"
     </div>
      
     <div class="overlay__trello">
-        <h3 class="overlay__subtitle">Trello</h3>
+        <h4 class="overlay__subtitle">Trello</h4>
         <button class="overlay__button overlay__profile-visibility">
             Profile and visibility
         </button>
@@ -135,12 +134,8 @@ cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="workspaces"
 [cdkConnectedOverlayOpen]="isOpenOverlayWorkspaces"
 [cdkConnectedOverlayOffsetY]="8"
-(overlayOutsideClick)="isOpenOverlayWorkspaces=!isOpenOverlayWorkspaces"    
-hasBackdrop="true"
+ 
 > 
-<div class="overlay">
-    <p>apsd </p>
-    
-</div>
+<app-overlay-workspaces></app-overlay-workspaces>
 </ng-template>
 
