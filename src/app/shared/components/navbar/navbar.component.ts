@@ -13,6 +13,8 @@ export class NavbarComponent {
   faArrowUpRight=faArrowUpRightFromSquare;
   faChevronRight= faChevronRight;
   faUserGroup=faUserGroup;
-  isOpen:boolean = false;
+
+  isOpenOverlayProfile:boolean = false;
+  isOpenOverlayWorkspaces=false;
 
 }

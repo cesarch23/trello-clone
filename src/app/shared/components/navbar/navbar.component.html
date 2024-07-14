@@ -5,7 +5,10 @@
         <button class="nav__item nav__item-background">
             <img class="nav__logo" src="/assets/images/logo/Trello/SVG/trello-logo-gradient-neutral-attribution_rgb.svg" alt="logo trello" loading="lazy">
         </button>
-        <button class="nav__item" name="workspaces">
+        <button class="nav__item" name="workspacesButton" 
+        (click)="isOpenOverlayWorkspaces=!isOpenOverlayWorkspaces"
+        cdkOverlayOrigin #workspaces="cdkOverlayOrigin"
+        >
             <span class="nav__text">Workspaces</span>
             <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" loading="lazy">
         </button>
@@ -49,7 +52,7 @@
         <button class="nav__help">
             <img src="/assets/icons/help-icon.svg" alt="help icon">
         </button>
-        <button class="nav__profile" (click)="isOpen=!isOpen" cdkOverlayOrigin #profile="cdkOverlayOrigin">
+        <button class="nav__profile" (click)="isOpenOverlayProfile=!isOpenOverlayProfile" cdkOverlayOrigin #profile="cdkOverlayOrigin">
             <span class="nav__content">CC</span>
         </button>
          
@@ -60,7 +63,8 @@
 <ng-template #profile
 cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="profile"
-[cdkConnectedOverlayOpen]="isOpen"    
+[cdkConnectedOverlayOpen]="isOpenOverlayProfile"
+[cdkConnectedOverlayOffsetY]="8"    
 > 
 <div class="overlay">
     <div class="overlay__account">
@@ -123,3 +127,16 @@ cdkConnectedOverlay
 
 </div>
 </ng-template>
+
+<ng-template #workspaces
+cdkConnectedOverlay
+[cdkConnectedOverlayOrigin]="workspaces"
+[cdkConnectedOverlayOpen]="isOpenOverlayWorkspaces"
+[cdkConnectedOverlayOffsetY]="8"    
+> 
+<div class="overlay">
+    <p>apsd </p>
+    
+</div>
+</ng-template>
+
