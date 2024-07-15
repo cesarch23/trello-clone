@@ -1,0 +1,38 @@
+<div class="templates">
+    <div class="accordion">
+      <cdk-accordion >
+          <cdk-accordion-item
+          #accordionItem="cdkAccordionItem"
+          role="button"
+          id="accordion-header-1"
+          aria-expanded="accordionItem.expanded"
+          aria-controls="accordion-body-1"
+          >
+          <div class="accordion__header">
+              <h4>Top templates</h4>
+              <button class="accordion__toggle-button" (click)="accordionItem.toggle()" >
+                <fa-icon [icon]="accordionItem.expanded? faUp:faDown"></fa-icon>
+              </button>
+          </div>
+          <div class="accordion__body"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            id="accordion-body-1"
+            aria-labelledby="accordion-header-1">
+              <button class="accordion__button-template" *ngFor="let t of templates"  >
+                <img  class="accordion__template-image" [src]="t.image" alt="img">
+                <span class="accordion__template-title"> {{t.title}} </span>
+              </button>
+          </div>
+      
+          </cdk-accordion-item>
+      </cdk-accordion>
+    </div>
+    <div class="templates__info">
+        <div class="templates__content">
+          <img src="/assets/icons/trello-icon.svg" alt="trello logo">
+          <p>See hundreds of templates from the Trello community</p>
+        </div>
+        <button class="templates__explore-button">Explore Templates</button>
+    </div>
+</div>

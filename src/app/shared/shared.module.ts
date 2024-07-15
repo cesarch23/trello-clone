@@ -7,6 +7,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OverlayWorkspacesComponent } from './components/navbar/components/overlay-workspaces/overlay-workspaces.component';
 import { RecentsStarredComponent } from './components/navbar/components/recents-starred/recents-starred.component';
+import { OverlayTemplateComponent } from './components/navbar/components/overlay-template/overlay-template.component';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { RecentsStarredComponent } from './components/navbar/components/recents-
     NavbarComponent,
     OverlayWorkspacesComponent,
     RecentsStarredComponent,
+    OverlayTemplateComponent,
     
   ],
   imports: [
     CommonModule,
     OverlayModule,
     FontAwesomeModule,
+    CdkAccordionModule,
   ],
   exports:[
     BtnComponent,
