@@ -17,6 +17,7 @@
         cdkOverlayOrigin 
         #recents="cdkOverlayOrigin"
         (click)="isOpenOverlayRecents=!isOpenOverlayRecents"
+        [ngClass]="{'active':isOpenOverlayRecents}"
         >
             <span class="nav__text">Recent</span>
             <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" >
@@ -25,6 +26,7 @@
         (click)="isOpenOverlayStarred=!isOpenOverlayStarred"
         cdkOverlayOrigin
         #starred="cdkOverlayOrigin"
+        [ngClass]="{'active':isOpenOverlayStarred}"
         >
             <span class="nav__text">Starred</span>
             <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon">
