@@ -4,7 +4,7 @@
             <img class="nav__logo" src="/assets/images/logo/Trello/SVG/trello-logo-gradient-neutral-attribution_rgb.svg" alt="logo trello">
         </button>
         <button class="nav__item" name="workspacesButton" 
-        (click)="isOpenOverlayWorkspaces=!isOpenOverlayWorkspaces"
+        (click)="toggleWorkspaces()"
         cdkOverlayOrigin #workspaces="cdkOverlayOrigin"
         [class.active]="isOpenOverlayWorkspaces"
         >
@@ -14,14 +14,14 @@
         <button class="nav__item" 
         cdkOverlayOrigin 
         #recents="cdkOverlayOrigin"
-        (click)="isOpenOverlayRecents=!isOpenOverlayRecents"
+        (click)="toggleRecents()"
         [ngClass]="{'active':isOpenOverlayRecents}"
         >
             <span class="nav__text">Recent</span>
             <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" >
         </button>
         <button class="nav__item"
-        (click)="isOpenOverlayStarred=!isOpenOverlayStarred"
+        (click)="toggleStarred()"
         cdkOverlayOrigin
         #starred="cdkOverlayOrigin"
         [ngClass]="{'active':isOpenOverlayStarred}"
@@ -30,7 +30,7 @@
             <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon">
         </button>
         <button class="nav__item"
-        (click)="isOpenOverlayTemplate=!isOpenOverlayTemplate"
+        (click)="toggleTemplate()"
         cdkOverlayOrigin
         #template="cdkOverlayOrigin"
         [ngClass]="{'active':isOpenOverlayTemplate}"
@@ -66,7 +66,7 @@
         <button class="nav__help">
             <img src="/assets/icons/help-icon.svg" alt="help icon">
         </button>
-        <button class="nav__profile" (click)="isOpenOverlayProfile=!isOpenOverlayProfile" cdkOverlayOrigin #profile="cdkOverlayOrigin">
+        <button class="nav__profile" (click)="toggleProfile()" cdkOverlayOrigin #profile="cdkOverlayOrigin">
             <span class="nav__content">CC</span>
         </button>
          
@@ -80,7 +80,10 @@ cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="profile"
 [cdkConnectedOverlayOpen]="isOpenOverlayProfile"
 [cdkConnectedOverlayOffsetY]="8"
-  
+cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+cdkConnectedOverlayHasBackdrop="true"
+(backdropClick)="toggleProfile()"
+
 > 
 <div class="overlay">
     <div class="overlay__account">
@@ -150,6 +153,9 @@ cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="workspaces"
 [cdkConnectedOverlayOpen]="isOpenOverlayWorkspaces"
 [cdkConnectedOverlayOffsetY]="8"
+cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+cdkConnectedOverlayHasBackdrop="true"
+(backdropClick)="toggleWorkspaces()"
  
 > 
 <app-overlay-workspaces></app-overlay-workspaces>
@@ -161,6 +167,10 @@ cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="recents"
 [cdkConnectedOverlayOpen]="isOpenOverlayRecents"
 [cdkConnectedOverlayOffsetY]="8"
+cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+cdkConnectedOverlayHasBackdrop="true"
+(backdropClick)="toggleRecents()"
+
 >
 <app-recents-starred [boards]="arrRecents" ></app-recents-starred>
 </ng-template>
@@ -171,6 +181,9 @@ cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="starred"
 [cdkConnectedOverlayOpen]="isOpenOverlayStarred"
 [cdkConnectedOverlayOffsetY]="8"
+cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+cdkConnectedOverlayHasBackdrop="true"
+(backdropClick)="toggleStarred()"
 >
 <app-recents-starred [boards]="arrStarred" ></app-recents-starred>
 </ng-template>
@@ -181,6 +194,9 @@ cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="template"
 [cdkConnectedOverlayOpen]="isOpenOverlayTemplate"
 [cdkConnectedOverlayOffsetY]="8"
+cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+cdkConnectedOverlayHasBackdrop="true"
+(backdropClick)="toggleTemplate()"
 >
 <app-overlay-template [templates]="arrTemplates" ></app-overlay-template>
 </ng-template>

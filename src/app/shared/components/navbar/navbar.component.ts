@@ -14,6 +14,7 @@ export class NavbarComponent {
   faArrowUpRight=faArrowUpRightFromSquare;
   faChevronRight= faChevronRight;
   faUserGroup=faUserGroup;
+  easy:boolean = false;
 
   isOpenOverlayProfile:boolean = false;
   isOpenOverlayWorkspaces:boolean=false;
@@ -110,5 +111,22 @@ export class NavbarComponent {
     }
   ] 
   arrStarred = this.arrRecents.filter(board=>board.starred)
+
+  toggleProfile(){
+    this.isOpenOverlayProfile= !this.isOpenOverlayProfile;
+  }
+  toggleWorkspaces(){
+    this.isOpenOverlayWorkspaces=!this.isOpenOverlayWorkspaces;
+  }
+  toggleStarred(){
+    this.isOpenOverlayStarred=!this.isOpenOverlayStarred
+  }
+  toggleRecents(){
+    this.isOpenOverlayRecents=!this.isOpenOverlayRecents
+  }
+  toggleTemplate(){
+    this.isOpenOverlayTemplate=!this.isOpenOverlayTemplate
+  }
+   
 
 }
