@@ -1,0 +1,75 @@
+.boards{
+    padding: .8rem;
+    border: .1rem solid var(--button-background-hovered);
+    background-color: white;
+    box-shadow: 0 0 .8rem .1rem rgb(230, 230, 230);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+.board{
+    width: 100%;
+
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    
+    padding: .4rem .8rem .4rem .4rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+.board:hover{
+    background-color: var(--button-background-hovered);
+}
+.board__image{
+    width: 4rem;
+    height: 3.2rem;
+    border-radius: var(--border-radius);
+}
+.board__content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.board__text{
+     
+}
+.board__subtitle{
+    margin: 0;
+    text-align: left;
+}
+.board__workspace-name{
+    max-width: 15rem;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+.board__icon-button{
+    cursor: pointer;
+    background-color: initial;
+    border: none;
+}
+.star{
+    font-size: 2rem;
+}
+.star.inactive{
+    color: transparent;
+}
+.star.active, .star.inactive:hover{
+    color:#E2B203 ;
+}
+.board__content:hover .star.inactive, .star.active:hover{
+    color: white;
+    filter: drop-shadow(.1rem .1rem .1rem #e2b203)
+}
+
+.board__icon-button:hover  .star.inactive{     
+    color:#E2B203 ;
+}
+@media  screen and (width>=735px) {
+    .board__workspace-name{
+        max-width: 20rem;
+    }
+}

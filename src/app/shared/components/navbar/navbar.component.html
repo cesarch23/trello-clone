@@ -2,31 +2,40 @@
 <!-- TODO: DESARROLLAR EL NAVBAR -->
 <nav class="nav">
     <div class="nav__items">
-        <button class="nav__item nav__item-background">
-            <img class="nav__logo" src="/assets/images/logo/Trello/SVG/trello-logo-gradient-neutral-attribution_rgb.svg" alt="logo trello" loading="lazy">
+        <button class="nav__item nav__item-background" >
+            <img class="nav__logo" src="/assets/images/logo/Trello/SVG/trello-logo-gradient-neutral-attribution_rgb.svg" alt="logo trello">
         </button>
         <button class="nav__item" name="workspacesButton" 
         (click)="isOpenOverlayWorkspaces=!isOpenOverlayWorkspaces"
         cdkOverlayOrigin #workspaces="cdkOverlayOrigin"
+        [class.active]="isOpenOverlayWorkspaces"
         >
             <span class="nav__text">Workspaces</span>
-            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" loading="lazy">
+            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon">
         </button>
-        <button class="nav__item">
+        <button class="nav__item" 
+        cdkOverlayOrigin 
+        #recents="cdkOverlayOrigin"
+        (click)="isOpenOverlayRecents=!isOpenOverlayRecents"
+        >
             <span class="nav__text">Recent</span>
-            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" loading="lazy">
+            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" >
         </button>
-        <button class="nav__item">
+        <button class="nav__item"
+        (click)="isOpenOverlayStarred=!isOpenOverlayStarred"
+        cdkOverlayOrigin
+        #starred="cdkOverlayOrigin"
+        >
             <span class="nav__text">Starred</span>
-            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" loading="lazy">
+            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon">
         </button>
         <button class="nav__item">
             <span class="nav__text">Templates</span>
-            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" loading="lazy">
+            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" >
         </button>
         <button class="nav__item nav__more-button">
             <span class="nav__text">More</span>
-            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon" loading="lazy">
+            <img  class="nav__icon" src="/assets/icons/keyboard-arrow-down.svg" alt="down arrow icon">
         </button>
         <button class="nav__item nav__item-color nav__item-display">
             Create
@@ -60,7 +69,8 @@
 
 </nav>
 
-<ng-template #profile
+<ng-template 
+#profile
 cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="profile"
 [cdkConnectedOverlayOpen]="isOpenOverlayProfile"
@@ -129,7 +139,8 @@ cdkConnectedOverlay
 </div>
 </ng-template>
 
-<ng-template #workspaces
+<ng-template 
+#workspaces
 cdkConnectedOverlay
 [cdkConnectedOverlayOrigin]="workspaces"
 [cdkConnectedOverlayOpen]="isOpenOverlayWorkspaces"
@@ -139,3 +150,21 @@ cdkConnectedOverlay
 <app-overlay-workspaces></app-overlay-workspaces>
 </ng-template>
 
+<ng-template
+#recents
+cdkConnectedOverlay
+[cdkConnectedOverlayOrigin]="recents"
+[cdkConnectedOverlayOpen]="isOpenOverlayRecents"
+[cdkConnectedOverlayOffsetY]="8"
+>
+<app-recents-starred [boards]="arrRecents" ></app-recents-starred>
+</ng-template>
+<ng-template
+#starred
+cdkConnectedOverlay
+[cdkConnectedOverlayOrigin]="starred"
+[cdkConnectedOverlayOpen]="isOpenOverlayStarred"
+[cdkConnectedOverlayOffsetY]="8"
+>
+<app-recents-starred [boards]="arrStarred" ></app-recents-starred>
+</ng-template>

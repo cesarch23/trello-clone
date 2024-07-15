@@ -1,0 +1,21 @@
+<div class="boards">
+    <div class="board" *ngFor="let b of boards ">
+        <img class="board__image" [src]="b.image" [alt]=" b.title +'image'">
+        <div class="board__content">
+            <div class="board__text">
+                <h4 class="board__subtitle"> {{ b.title }} </h4>
+                <p class="board__workspace-name"> {{ b.workspaceName }} </p>
+            </div>
+            <span class="add"></span>
+            <button class="board__icon-button">
+                <fa-icon
+                class="star" 
+                [ngClass]="b.starred ? 'active':'inactive'" 
+                [icon]="faStar" 
+                [title]=" b.starred ? 'Click to remove from your favourite list' : 'Click to Add to your favourite list'">
+                </fa-icon>
+              
+            </button>
+        </div>
+    </div>
+</div>

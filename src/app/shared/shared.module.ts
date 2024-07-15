@@ -6,6 +6,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OverlayWorkspacesComponent } from './components/navbar/components/overlay-workspaces/overlay-workspaces.component';
+import { RecentsStarredComponent } from './components/navbar/components/recents-starred/recents-starred.component';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { OverlayWorkspacesComponent } from './components/navbar/components/overl
     BtnComponent,
     NotFoundPageComponent,
     NavbarComponent,
-    OverlayWorkspacesComponent
+    OverlayWorkspacesComponent,
+    RecentsStarredComponent,
+    
   ],
   imports: [
     CommonModule,

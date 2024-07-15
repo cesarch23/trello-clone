@@ -31,6 +31,12 @@
 .nav__item:active{
     background-color: var(--button-pressed);
 }
+.nav__item.active{
+    background-color: var(--button-background-selected);
+}
+.nav__item.active .nav__text{
+    color: var(--primary-color);
+}
 .nav__item-background{
     padding: 0;
     display: block;
