@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import { Board } from '../../interfaces/board.interface';
 import { faArrowUpRightFromSquare  } from '@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare';
 import { faChevronRight  } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faUserGroup  } from '@fortawesome/free-solid-svg-icons/faUserGroup';
-import { Board } from '../../interfaces/board.interface';
 
 @Component({
   selector: 'app-navbar',

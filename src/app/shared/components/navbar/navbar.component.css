@@ -4,7 +4,7 @@
     margin: 0 auto;
     padding: .8rem;
     border-bottom: .2rem solid var(--dark-neutral-color);
-    height: 4.8rem;
+    height: var(--navbar-height);
 }
 .nav__items{
     display: flex;

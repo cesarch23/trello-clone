@@ -1,0 +1,66 @@
+<div class="navigation">
+    <button   class="navigation__boards-button">
+        <img  class="navigation__icon" src="/assets/icons/trello-icon-white.svg" alt="trello icon">
+        <span class="navigation__text">Boards</span>
+    </button>
+    <button   class="navigation__boards-button">
+        <img  class="navigation__icon" src="/assets/icons/trello-icon-white.svg" alt="trello icon">
+        <span class="navigation__text">Templates</span>
+    </button>
+    <button   class="navigation__boards-button">
+        <img  class="navigation__icon" src="/assets/icons/trello-icon-white.svg" alt="trello icon">
+        <span class="navigation__text">Home</span>
+    </button>
+    <hr class="navigation__line">
+    <h4>Workspaces</h4>
+    <div class="accordion-workspaces">
+        <cdk-accordion class="">
+            <cdk-accordion-item
+            #accordionItem="cdkAccordionItem"
+            >
+                <div class="accordion-workspaces__header" (click)="accordionItem.toggle()" >
+                    <div class="accordion-workspaces__header-logo">E</div>
+                    <span class="accordion-workspaces__header-text">Espacio de trabajo de Cesar Choccata desde la perspectiva de una manera que no se puede </span>
+                    <div class="accordion-wokspaces__header-icon"  >
+                        <fa-icon [icon]=" accordionItem.expanded ? faAngleUp:faAngleDown" [title]=" accordionItem.expanded? 'close' : 'open'"></fa-icon>
+                    </div>
+        
+                </div>
+                <div class="accordion-workspaces__body"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                >
+                    <button   class="accordion-workspaces__button-option">
+                        <fa-icon class="accordion-workspaces__button-icon" [icon]="faSquare"></fa-icon>
+                        <span class="accordion-workspaces__button-text">Boards</span>
+                    </button>
+                    <button      class="accordion-workspaces__button-option">
+                        <fa-icon class="accordion-workspaces__button-icon" [icon]="faHeart"></fa-icon>
+                        <span    class="accordion-workspaces__button-text">Hightlights</span>
+                    </button>
+                    <button   class="accordion-workspaces__button-option accordion-workspaces__button-option--justify">
+                        <div class="accordion-workspaces__button-content">
+                            <fa-icon class="accordion-workspaces__button-icon" [icon]="faTable"></fa-icon>
+                            <span class="accordion-workspaces__button-text">Views</span>
+                        </div>
+                        <fa-icon class="accordion-workspaces__button-icon accordion-workspaces__button-icon--transform" [icon]="faAngleRight"></fa-icon>
+                    </button>
+                    <button   class="accordion-workspaces__button-option accordion-workspaces__button-option--justify">
+                        <div class="accordion-workspaces__button-content">
+                            <fa-icon class="accordion-workspaces__button-icon" [icon]="faGroup"></fa-icon>
+                            <span class="accordion-workspaces__button-text">Members</span>
+                        </div>
+                        <fa-icon class="accordion-workspaces__button-icon accordion-workspaces__button-icon--transform" [icon]="faAngleRight"></fa-icon>
+                    </button>
+                    <button   class="accordion-workspaces__button-option accordion-workspaces__button-option--justify">
+                        <div class="accordion-workspaces__button-content">
+                            <fa-icon class="accordion-workspaces__button-icon" [icon]="faGear"></fa-icon>
+                            <span class="accordion-workspaces__button-text">Settings</span>
+                        </div>
+                        <fa-icon class="accordion-workspaces__button-icon accordion-workspaces__button-icon--transform" [icon]="faAngleRight"></fa-icon>
+                    </button>
+        
+                </div>
+            </cdk-accordion-item>
+        </cdk-accordion>
+    </div>
+</div>

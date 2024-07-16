@@ -1,0 +1,130 @@
+@media screen and (width>= 600px) {
+    .navigation{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: .4rem;
+    }
+    .navigation__boards-button{
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        padding: .6rem .8rem;
+        border: none;
+        cursor: pointer;
+        background-color: white;
+        border-radius: .8rem;
+        width: 100%;
+        transition: background-color ease 85ms;
+    }
+    .navigation__boards-button:hover, 
+    .accordion-workspaces__header:hover,
+    .accordion-workspaces__button-option:hover{
+        background-color: var(--button-background-hovered);
+    }
+    .navigation__icon{
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+    .navigation__text,
+    .accordion-workspaces__button-text{
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--button-text-color);
+    }
+    .navigation__line{
+        border-bottom: .1rem solid var(--dark-neutral-color);
+    }
+    
+    /* accordion */
+    .accordion-workspaces{
+        display: block;
+        max-width: 25.5rem;
+        
+    }
+    .accordion-workspaces__header{
+        display: flex;
+        justify-content: space-between;
+    
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        padding: .6rem .8rem;
+        border: none;
+        cursor: pointer;
+        background-color: white;
+        border-radius: .8rem;
+        width: 100%;
+        transition: background-color ease 85ms;
+    }
+    .accordion-workspaces__header-logo{
+         
+        padding: .6rem 1rem;
+        background: linear-gradient(#403294, #0747a6);
+        color: white;
+        text-align: center;
+        font-weight: 900;
+         
+        font-size: 1.4rem;
+        border-radius: .8rem;
+    }
+    .accordion-workspaces__header-text{
+        font-weight: 700;
+        font-size: 1.4rem;
+        display: block;
+        color: var(--button-text-color);
+       
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    
+    }
+    .accordion-workspaces__body{
+        
+    }
+    .accordion-workspaces__button-option{
+        padding: .6rem .6rem .6rem 4rem;
+    
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        border: none;
+        cursor: pointer;
+        background-color: white;
+        border-radius: .8rem;
+        width: 100%;
+        transition: background-color ease 85ms;
+    }
+    
+    .accordion-workspaces__button-option--justify{
+        justify-content: space-between;
+    }
+    .accordion-workspaces__button-icon{
+        color: var(--button-text-color);
+    }
+    .accordion-workspaces__button-icon--transform{
+         
+        color: transparent;
+        transform: translateX(0px);
+        
+        transition: transform ease 0.2s;
+        
+    }
+    
+    .accordion-workspaces__button-option:hover 
+    .accordion-workspaces__button-icon--transform
+    {
+        transform: translateX(-20px);
+        color: var(--button-text-color);
+        
+    }
+    .accordion-workspaces__button-text{
+         font-weight: 400;
+    }
+    .accordion-workspaces__button-content{
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+    }
+    
+}

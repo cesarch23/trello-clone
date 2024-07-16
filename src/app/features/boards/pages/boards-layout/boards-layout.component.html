@@ -1,6 +1,12 @@
 <app-navbar></app-navbar>
-<!-- TODO: MENU LATERAL -->
-<!--  CONTENT -->
-<!-- app-nav- -->
-<router-outlet></router-outlet>
+<div class="view">
+    <div class="content container">
+        <div class="content__sidenav">
+            <app-sidenav></app-sidenav>
+        </div>
+        <div class="content__page">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
 

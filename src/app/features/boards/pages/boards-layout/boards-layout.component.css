@@ -1,0 +1,26 @@
+.view{
+    height: calc(100vh - var(--navbar-height));
+  
+    padding-top: 4rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.content{
+    width:90%;
+    
+}
+.content__sidenav{
+    display: none;
+}
+@media screen and (width>=600px) {
+    .content{
+        max-width: 125rem;
+        display: flex;
+        gap: 2rem;
+    }
+    .content__sidenav{
+        display: block;
+        padding: 0 1.6rem;
+    }   
+}
