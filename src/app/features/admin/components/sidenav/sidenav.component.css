@@ -14,14 +14,20 @@
         cursor: pointer;
         background-color: white;
         border-radius: .8rem;
-        /* width: 100%; */
         transition: background-color ease 85ms;
     }
-   
+    
     .navigation__boards-button:hover, 
     .accordion-workspaces__header:hover,
     .accordion-workspaces__button-option:hover{
         background-color: var(--button-background-hovered);
+    }
+    .navigation__boards-button.activated{
+        background-color: var(--button-background-selected);
+        color: var(--primary-color);
+    }
+    .navigation__boards-button.activated .navigation__text{
+        color: var(--primary-color);
     }
     .navigation__icon{
         width: 2.4rem;

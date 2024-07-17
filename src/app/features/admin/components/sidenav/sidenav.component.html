@@ -1,14 +1,14 @@
 <div class="navigation">
-    <button   class="navigation__boards-button" >
-        <img  class="navigation__icon" src="/assets/icons/trello-icon-white.svg" alt="trello icon">
+    <button   class="navigation__boards-button" routerLink="/admin/boards" routerLinkActive="activated" >
+        <fa-icon [icon]="faTrello" title="click to go to home"></fa-icon>
         <span class="navigation__text">Boards</span>
     </button>
-    <button   class="navigation__boards-button">
-        <img  class="navigation__icon" src="/assets/icons/trello-icon-white.svg" alt="trello icon">
+    <button   class="navigation__boards-button" routerLink="/admin/templates" routerLinkActive="activated">
+        <fa-icon [icon]="faTrello" title="click to go to home"></fa-icon>
         <span class="navigation__text">Templates</span>
     </button>
-    <button   class="navigation__boards-button">
-        <img  class="navigation__icon" src="/assets/icons/trello-icon-white.svg" alt="trello icon">
+    <button   class="navigation__boards-button" routerLink="/admin/home" routerLinkActive="activated">
+        <fa-icon [icon]="faWave" title="click to go to home"></fa-icon>
         <span class="navigation__text">Home</span>
     </button>
     <hr class="navigation__line">

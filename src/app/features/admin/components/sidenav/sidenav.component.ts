@@ -8,6 +8,9 @@ import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup'
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
+import { faWaveSquare } from '@fortawesome/free-solid-svg-icons/faWaveSquare'
+import { faTrello } from '@fortawesome/free-brands-svg-icons/faTrello'
+
 
 @Component({
   selector: 'app-sidenav',
@@ -24,5 +27,7 @@ export class SidenavComponent {
   faGear=faGear;
   faAngleRight=faAngleRight;
   faPlus=faPlus;
+  faWave=faWaveSquare;
+  faTrello=faTrello;
 
 }
