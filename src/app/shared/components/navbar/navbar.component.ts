@@ -92,18 +92,24 @@ export class NavbarComponent {
   ]
   arrRecents:Board[] = [
     {
+      id:"5Qu5t4Ka",
+      name:"new-tab",
       image:'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/963ddbe30ac0e2ab51ed5ed7403a5143/photo-1523266092241-0077129f31fe.jpg',
       title:'New Tab',
       workspaceName: 'Cesar Choccata Workspace',
       starred:true
     },
     {
+      id:"5Qu5t4Kb",
+      name:"new-tab",
       image:'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/350dda08d977f92d756f3d9ec111ea66/photo-1521495084171-3ad639e3d525.jpg',
       title:'New Tab',
       workspaceName: 'Marco Aurelio Denegri Montes Workspace',
       starred:false
     },
     {
+      id:"5Qu5t4Kc",
+      name:"new-tab",
       image:'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/350dda08d977f92d756f3d9ec111ea66/photo-1521495084171-3ad639e3d525.jpg',
       title:'New Tab',
       workspaceName: 'Diego Baltazar Rodriguez Workspace',

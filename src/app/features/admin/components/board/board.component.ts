@@ -7,6 +7,6 @@ import { faStar } from '@fortawesome/free-solid-svg-icons/faStar'
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent {
-  @Input()board:Board={image:"",starred:false,title:"",workspaceName:""};
+  @Input()board:Board={id:"",name:"", image:"",starred:false,title:"",workspaceName:""};
   faStar=faStar;
 }
