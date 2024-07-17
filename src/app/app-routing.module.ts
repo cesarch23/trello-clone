@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren:()=>import('./features/admin/boards.module').then(m=>m.BoardsModule)
   },
   {
+    path:'b',
+    loadChildren:()=>import('./features/workspaces/workspaces.module').then(m=>m.WorkspacesModule)
+  },
+  {
     path:'',
     redirectTo:'admin',
     //esto es mandatorio ojo si cambia a login
