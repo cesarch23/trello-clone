@@ -5,6 +5,7 @@
     --primary-color:#0C66E4;
     --dark-blue-color:#0055CC;
     --dark-neutral-color:#DCDFE4;
+    --light-neutral-color:#091e420f;
     --gray-color:#5e6c84;
     --border-radius:.2rem;
 
@@ -19,8 +20,12 @@
     --profile-background-color:#ff991f;
 
     --h4-color:#626F86;
+    --color-heading:#172b4d;
+    --color-subtitle:#44546f;
     --ds-text:#172B4D;
     --navbar-height:4.8rem;
+
+    --color-star-icon:#e2b203;
 }
 *{
     box-sizing: border-box;  
@@ -54,9 +59,13 @@ h1{
 }
 h2{
     font-size: 1.8rem;
+    margin: 2rem 0;
+    color: var(--color-subtitle);
 }
 h3{
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    color: var(--color-heading);
+    font-weight: 900;
 }
 h4{
     font-size: 1.3rem;
@@ -64,12 +73,12 @@ h4{
 p{
     font-size: 1.2rem;
 }
-@media screen and (width>= 728px) {
+@media screen and (width>= 600px) {
     h1{
         font-size: 2.4rem;
     }
     h2{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     h3{
         font-size: 1.6rem;

@@ -9,12 +9,12 @@ const routes: Routes = [
     loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
-    path:'boards',
-    loadChildren:()=>import('./features/boards/boards.module').then(m=>m.BoardsModule)
+    path:'admin',
+    loadChildren:()=>import('./features/admin/boards.module').then(m=>m.BoardsModule)
   },
   {
     path:'',
-    redirectTo:'boards',
+    redirectTo:'admin',
     //esto es mandatorio ojo si cambia a login
     pathMatch:'full'
   },

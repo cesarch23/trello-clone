@@ -1,0 +1,78 @@
+<div class="boards">
+    <div class="boards__starred">
+        <div class="boards__head">
+            <fa-icon class="boards__star-icon" [icon]="faStar" title="star icon" ></fa-icon>
+            <h3>Starred boards</h3>
+        </div>
+        <div class="boards__content">
+            <app-board *ngFor="let board of arrStarred" [board]="board" ></app-board>
+        </div>
+    </div>
+
+    <div class="boards__recents">
+        <div class="boards__head">
+            <fa-icon class="boards__star-icon" [icon]="faClock" title="clock icon" ></fa-icon>
+            <h3>Recents viewed</h3>
+        </div>
+        <div class="boards__content">
+            <app-board *ngFor="let board of arrStarred" [board]="board" ></app-board>
+        </div>
+    </div>
+
+    <div class="boards__workspaces">
+        <h2 class="boards__title"> YOUR WORKSPACES</h2>
+        <div class="boards__worspaces-header">
+            <div class="boards__header-text">
+                <div class="boards__header-logo">E</div>
+                <h3  class="bards__subtitle" >Espacio de trabajo de cesar choccata olivera</h3>
+            </div>
+            <div class="boards__header-options">
+                <button href="#" class="boards__header-option">
+                    <fa-icon class="fa-lg"[icon]="faFile"  ></fa-icon>    
+                    <span>Boards</span>
+                </button>
+                <button href="#" class="boards__header-option">
+                    <fa-icon class="fa-lg"[icon]="faBox" ></fa-icon>    
+                    <span>Views</span>
+                </button>
+                <button href="#" class="boards__header-option">
+                    <fa-icon class="fa-lg"[icon]="faUser" ></fa-icon>    
+                    <span>Members(1)</span>
+                </button>
+                <button href="#" class="boards__header-option">
+                    <fa-icon class="fa-lg"[icon]="faGear" ></fa-icon>    
+                    <span>Settings</span>
+                </button>
+                <button href="#" class="boards__header-option boards__header-option--background">
+                    <fa-icon class="fa-lg"[icon]="faPro" ></fa-icon>    
+                    <span>Upgrade</span>
+                </button>
+            </div>
+        </div>
+        <div class="boards__content">
+            <app-board *ngFor="let board of arrRecents" [board]="board" ></app-board>
+            <div class="board-add">
+                <div class="board-add__content">
+                    <p class="board-add__text"> Create new board </p>
+                    <span class="board-add__remaining"> 7 remaining </span>
+                </div>
+                <div class="board-add__help-icon">
+                    <fa-icon>A</fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="boards__guests">
+        <h2 class="boards__title"> GUEST WORKSPACES <fa-icon [icon]="faInfoCircle"></fa-icon> </h2> 
+        <div class="boards__head">
+            <fa-icon class="boards__star-icon" [icon]="faUserGroup" title="clock icon" ></fa-icon>
+            <h3>Workspaces Pepe Lucho</h3>
+        </div>
+        <div class="boards__content">
+            <app-board *ngFor="let board of arrStarred" [board]="board" ></app-board>
+        </div>
+    </div>
+    
+
+</div>

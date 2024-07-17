@@ -9,7 +9,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 import {CdkAccordionModule} from '@angular/cdk/accordion';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TemplatesComponent } from './pages/templates/templates.component';
+import { HomeComponent } from './pages/home/home.component'
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     BoardsLayoutComponent,
     BoardComponent,
     BoardsComponent,
-    SidenavComponent
+    SidenavComponent,
+    TemplatesComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

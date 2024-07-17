@@ -1,5 +1,5 @@
 <div class="navigation">
-    <button   class="navigation__boards-button">
+    <button   class="navigation__boards-button" >
         <img  class="navigation__icon" src="/assets/icons/trello-icon-white.svg" alt="trello icon">
         <span class="navigation__text">Boards</span>
     </button>
@@ -20,9 +20,9 @@
             >
                 <div class="accordion-workspaces__header" (click)="accordionItem.toggle()" >
                     <div class="accordion-workspaces__header-logo">E</div>
-                    <span class="accordion-workspaces__header-text">Espacio de trabajo de Cesar Choccata desde la perspectiva de una manera que no se puede </span>
+                    <span class="accordion-workspaces__header-text">Workspaces Cesar choccata</span>
                     <div class="accordion-wokspaces__header-icon"  >
-                        <fa-icon [icon]=" accordionItem.expanded ? faAngleUp:faAngleDown" [title]=" accordionItem.expanded? 'close' : 'open'"></fa-icon>
+                        <fa-icon [icon]=" accordionItem.expanded ? faAngleUp:faAngleDown" [title]=" accordionItem.expanded? 'close' : 'open'" class="fa-xl"></fa-icon>
                     </div>
         
                 </div>

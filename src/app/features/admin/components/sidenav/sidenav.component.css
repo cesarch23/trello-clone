@@ -2,7 +2,7 @@
     .navigation{
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content:  flex-start;
         gap: .4rem;
     }
     .navigation__boards-button{
@@ -14,9 +14,10 @@
         cursor: pointer;
         background-color: white;
         border-radius: .8rem;
-        width: 100%;
+        /* width: 100%; */
         transition: background-color ease 85ms;
     }
+   
     .navigation__boards-button:hover, 
     .accordion-workspaces__header:hover,
     .accordion-workspaces__button-option:hover{
@@ -39,22 +40,24 @@
     /* accordion */
     .accordion-workspaces{
         display: block;
-        max-width: 25.5rem;
+      
         
     }
     .accordion-workspaces__header{
         display: flex;
         justify-content: space-between;
-    
-        display: flex;
         align-items: center;
+        /* max-width: 25.5rem; */
+        /* max-width: 100%;
+        width: 17rem; */
+    
+         
         gap: .8rem;
         padding: .6rem .8rem;
         border: none;
         cursor: pointer;
         background-color: white;
         border-radius: .8rem;
-        width: 100%;
         transition: background-color ease 85ms;
     }
     .accordion-workspaces__header-logo{
@@ -64,23 +67,20 @@
         color: white;
         text-align: center;
         font-weight: 900;
-         
         font-size: 1.4rem;
         border-radius: .8rem;
+        height: fit-content;
+         
     }
     .accordion-workspaces__header-text{
         font-weight: 700;
         font-size: 1.4rem;
-        display: block;
         color: var(--button-text-color);
-       
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    
+        flex: 1 1 auto;
+        max-width: 17.6rem;    
     }
-    .accordion-workspaces__body{
-        
+    .accordion-wokspaces__header-icon{
+        align-self: center;
     }
     .accordion-workspaces__button-option{
         padding: .6rem .6rem .6rem 4rem;
@@ -106,7 +106,6 @@
          
         color: transparent;
         transform: translateX(0px);
-        
         transition: transform ease 0.2s;
         
     }
