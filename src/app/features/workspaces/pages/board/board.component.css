@@ -1,0 +1,123 @@
+.lists{
+    padding: 1.2rem;
+    display: flex;
+    gap: 1.2rem;
+     
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x:auto ;    
+    scrollbar-color: #fff6 #00000026;
+   
+
+}
+.list{
+    
+    max-height: 100%;
+    height: max-content;
+    min-width: 27.2rem;
+
+    background-color: var(--background-color-lists);
+    border-radius: 1.2rem;
+    padding: .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
+}
+.list__heading, 
+.list__footer{
+    display: flex;
+    justify-content: space-between;
+    gap: .4rem;
+}
+.list__name, 
+.list__actions, 
+.list__add-button,
+.list__create-temp-button{
+    border:none;
+    cursor:pointer;
+}
+.list__name, 
+.list__add-button{
+    width: 100%;
+    padding: .6rem .8rem;
+    
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: .2rem;
+    color: var(--color-heading);
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    border-radius: .8rem;
+}
+.list__actions, 
+.list__create-temp-button{
+    color: var(--color-heading);
+    padding: .8rem;
+    border-radius: .8rem;
+    transition: background-color ease .10s;
+}
+.list__actions:hover,
+.list__create-temp-button:hover{
+    background-color: var(--background-icon-hovered);
+}
+.list__cards{
+    background-color: transparent;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #091e4224  #091e420f;
+
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    
+    padding: .2rem;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem 1.2rem;
+    border-radius: .8rem;
+    background-color: #ffffff;
+
+    min-height: 3.6rem;
+    box-shadow: 0 .1rem .1rem #091e4240 , 0px 0px 1px #091e424f;
+   
+    cursor: pointer;
+    scroll-margin: .8rem;
+    transition: outline ease 4ms;
+}
+.card:hover{
+    outline: .2rem solid var(--primary-color);
+}
+.card__title{
+    color:var(--color-heading, #172b4d) ;
+}
+.card__button-edit{
+    color:var(--color-heading, #172b4d) ;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: .6rem .6rem;
+    border-radius: 50%; 
+    height: max-content;
+
+    display: grid;
+    place-content: center;
+}
+.card__button-edit:hover{
+    background-color: var(--background-icon-hovered);
+}
+.list__add-button{
+    transition: background-color ease-in .10s;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.list__add-button:hover{
+    background-color: var(--background-icon-hovered);
+
+}

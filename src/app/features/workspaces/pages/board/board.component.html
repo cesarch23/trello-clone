@@ -1,1 +1,29 @@
-<p>board works!</p>
+<div class="lists">
+    <div *ngFor="let i of array" class="list">
+        <div class="list__heading">
+            <button class="list__name">Name list</button>
+            <button class="list__actions">
+                <fa-icon class="fa-light fa-lg" [icon]="faEllipsis"  ></fa-icon>
+            </button>
+        </div>
+        <div class="list__cards">
+            <div *ngFor="let i of arr" class="card">
+                <a class="card__title" >title card</a>
+                <button class="card__button-edit">
+                    <fa-icon class="fa-xs" [icon]="faPen" ></fa-icon>
+                </button>
+            </div>
+        </div>
+        <div class="list__footer">
+            <button class="list__add-button">
+                <fa-icon class="fa-lg" [icon]="faPlus"></fa-icon>
+                Add a card
+            </button>
+            <button class="list__create-temp-button">
+                <fa-icon class="fa-sm" [icon]="faFilm" title="create from template" ></fa-icon>
+            </button>
+        </div>
+
+    </div>
+
+</div>
