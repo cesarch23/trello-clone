@@ -1,4 +1,4 @@
-<div class="board">
+<div class="board" [routerLink]="'/b/'+board.id+'/'+board.name">
     <div class="board__background">
         <img class="board__image" [src]="board.image" [alt]="board.title">
     </div>

@@ -1,1 +1,96 @@
-<p>sidebar works!</p>
+<div class="sidebar" [ngClass]="{'collapsed':isCollapsed}" >
+    <div class="sidebar__header">
+        <div class="sidebar__logo  collapsed-item">
+            <p>E</p>
+        </div>
+        <div class="sidebar__info  collapsed-item">
+            <p>Espacio de trabajo de</p>
+            <p class="sidebar__username">cesar choccata oliver atom</p>
+            <p class="sidebar__plan">Free</p>
+        </div>
+        <span class="flex-item collapsed-item"></span>
+        <div class="sidebar__collapse-icon"  (click)="toggleSidebar()" >
+            <fa-icon class="fa-lg" 
+            [icon]="faChevronLeft" 
+            [title]="isCollapsed ? 'open sidebar' : 'close sidebar'"
+            >
+            </fa-icon>
+        </div>
+    </div>
+    <div class="sidebar__menu  collapsed-item">
+        <div class="sidebar__menu-item">
+            <fa-icon class="icon fa-sm"  [icon]="faTrello" title="trello icon"></fa-icon>
+            <span>Boards</span>
+        </div>
+        <div class="sidebar__menu-item">
+            <fa-icon class="icon fa-sm" [icon]="faUser" title="person icon"></fa-icon>
+            <span>Members</span>
+            <span class="flex-item"></span>
+            <div class="button-icon">
+                <fa-icon class="fa-sm"  [icon]="faPlus" title="plus icon" ></fa-icon>
+            </div>
+        </div>
+        <div class="sidebar__menu-item">
+            <fa-icon class="icon fa-sm" [icon]="faCog" title="config icon"></fa-icon>
+            <span>Workspace settings</span>
+            <span class="flex-item "></span>
+            <div class="button-icon button-icon--hover">
+                <fa-icon class="fa-sm" [icon]="faChevronDown" title="down icon" ></fa-icon>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar__views  collapsed-item">
+        <h3 class="sidebar__views-title">Workspace views</h3>
+        <div class="sidebar__menu-item">
+            <fa-icon class="icon fa-sm" [icon]="faTable" title="table icon" ></fa-icon>
+            <span>Table</span>
+            <span class="flex-item "></span>
+            <div class="button-icon button-icon--hover">
+                <fa-icon class="fa-sm" [icon]="faEllipsis" title="option icon" ></fa-icon>
+            </div>
+        </div>
+        <div class="sidebar__menu-item">
+            <fa-icon class="icon fa-sm" [icon]="faCalendarAlt" title="calendar icon"></fa-icon>
+            <span>Calendar</span>
+            <span class="flex-item"></span>
+            <div class="button-icon button-icon--hover">
+                <fa-icon class="fa-sm" [icon]="faEllipsis" title="option icon" ></fa-icon>
+            </div>
+        </div>
+        
+    </div>
+    <div class="sidebar__boards  collapsed-item">
+        <div class="sidebar__boards-header">
+            <h3 class="sidebar__boards-title">Your boards</h3>
+            <div class="sidebar__board-icons">
+                <div class="button-icon">
+                    <fa-icon class="fa-lg" [icon]="faEllipsis" title="option icon"></fa-icon>
+                </div>
+                <div class="button-icon">
+                    <fa-icon class="fa-lg" [icon]="faPlus" title="plus icon"></fa-icon>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar__board-item">
+            <img class="sidebar__board-item-img" src="https://images.unsplash.com/photo-1720048170996-40507a45c720?q=80&w=1913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="First table">
+            <span>First table</span>
+            <span class="flex-item"></span>
+            <div class="sidebar__board-icons">
+                <div class="button-icon button-icon--hover">
+                    <fa-icon class="fa-sm" [icon]="faEllipsis" title="option icon"></fa-icon>
+                </div>
+                <div class="button-icon button-icon--hover">
+                    <fa-icon class="fa-lg star-icon" [icon]="faStar" title="plus icon"></fa-icon>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <span class="flex-item collapsed-item"></span>
+    <div class="sidebar__cta  collapsed-item">
+        <button class="sidebar__cta-button">
+            <fa-icon class="fa-sm" [icon]="faTrello" title="trello icon" ></fa-icon>
+            <span>Try Premium free</span>
+        </button>
+    </div>
+</div>

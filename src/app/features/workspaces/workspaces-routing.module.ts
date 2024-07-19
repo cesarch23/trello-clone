@@ -12,12 +12,15 @@ const ROUTES:Routes=[
             {path:'404',component:NotFoundPageComponent},
             {path:'**',redirectTo:'404'}
         ]
-
+    },
+    {
+        path:'**',
+        redirectTo:'404'
     }
 ]
 @NgModule( {
     imports:[RouterModule.forChild(ROUTES)],
-    exports:[]
+    exports:[RouterModule]
 
 })
 export class WorkspacesRoutingModule{

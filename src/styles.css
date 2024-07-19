@@ -26,6 +26,11 @@
     --navbar-height:4.8rem;
 
     --color-star-icon:#e2b203;
+
+    --background-color-lists:#f1f2f4;
+    --background-icon-hovered:#091e4224;
+    
+     
 }
 *{
     box-sizing: border-box;  

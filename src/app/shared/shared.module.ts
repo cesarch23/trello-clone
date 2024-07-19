@@ -9,6 +9,7 @@ import { OverlayWorkspacesComponent } from './components/navbar/components/overl
 import { RecentsStarredComponent } from './components/navbar/components/recents-starred/recents-starred.component';
 import { OverlayTemplateComponent } from './components/navbar/components/overlay-template/overlay-template.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     OverlayModule,
     FontAwesomeModule,
     CdkAccordionModule,
+    RouterModule
   ],
   exports:[
     BtnComponent,

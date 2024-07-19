@@ -1,0 +1,16 @@
+.board{
+    height: calc( 100vh - var(--navbar-height));
+    background-color: aliceblue;
+    display: flex;
+}
+.board__sidebar{
+    height: 100%;
+    background-color: bisque;
+}
+.board__lists{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(37, 101, 160);
+
+    overflow-x: auto;
+}
