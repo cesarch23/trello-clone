@@ -3,9 +3,6 @@
     width: 26rem;
     background-color: rgb(55, 87, 107);
     color: white;   
-    /* display: flex;
-    flex-direction: column; */
-
     height: 100%;
     transition: width ease 9ms;
     position: relative;
@@ -16,7 +13,6 @@
 
     display: flex;
     flex-direction: column;
-    /* gap: 5rem; */
     
 }
 .sidebar.collapsed{
@@ -41,7 +37,6 @@
     border: none;
     padding: 0;
 }
-/* TODO- AL DISCMINIUIR TAMAÑNO SIGUE APARECIENDO EN EL DOM */
 .sidebar.collapsed .collapsed-item
 {
     display: none;
@@ -53,7 +48,6 @@
     align-items: center;
     min-height: 4rem;
     padding: .8rem 1.2rem;
-    /* ********************************************++para todos este paddin left and right   */
     border-bottom: .1rem solid rgba(255, 255, 255, 0.161);
     margin-bottom: 1.2rem;
 }
@@ -105,16 +99,13 @@
 .sidebar__collapse-icon:hover{
     background-color:#5f7e93;
 }
-.sidebar__menu{
 
-}
 .sidebar__menu-item, 
 .sidebar__board-item{
     display: flex;
     padding: 1rem 1.2rem;
     font-size: 1.4rem;
     height: 3.2rem;
-    /* background-color: #403294; */
     align-items: center;
     cursor: pointer;
     
@@ -171,10 +162,6 @@
     align-items: center;
     justify-content: space-between;
     
-}
-
-.sidebar__board-item{
-
 }
 .sidebar__board-item-img{
     border-radius: .2rem;
