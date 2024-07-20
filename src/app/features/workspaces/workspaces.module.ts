@@ -9,6 +9,7 @@ import { WorkspacesRoutingModule } from './workspaces-routing.module';
 import  {  FontAwesomeModule  } from '@fortawesome/angular-fontawesome'
 import { SharedModule } from 'src/app/shared/shared.module';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     FontAwesomeModule,
     SharedModule,
     WorkspacesRoutingModule,
+    ReactiveFormsModule
     
   ]
 })

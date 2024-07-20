@@ -29,10 +29,21 @@
     </div>
 
     <div class="list list--padding" >
-        <button class="add-button-list">
+        <button class="add-button-list" [style.display]=" isClicked ? 'none':''"  (click)="toggleButton()" >
                 <fa-icon class="fa-lg" [icon]="faPlus"></fa-icon>
                 Add another list
         </button>
+        
+        <form action="#" class="form" [style.display]="isClicked ? 'flex':'none'"  >
+                <textarea [formControl]="listTitle" name="title2" #textarea class="form__input" placeholder="Enter list title..." rows="1"></textarea>
+                <div class="form__actions">
+                    <button class="form__submit" type="button" (click)="addList()" >Add list</button>
+                    <button class="form__cancel" type="reset" (click)="toggleButton()">
+                        <fa-icon class="fa-1x" [icon]="faX"></fa-icon>
+                    </button>
+                </div>
+        </form>
+        
     </div>
 
 </div>

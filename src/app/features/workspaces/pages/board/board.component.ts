@@ -1,22 +1,37 @@
-import { Component } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, ViewChild } from '@angular/core';
 import  { faEllipsis} from '@fortawesome/free-solid-svg-icons/faEllipsis'
 import  { faPen} from '@fortawesome/free-solid-svg-icons/faPen'
 import  { faPlus} from '@fortawesome/free-solid-svg-icons/faPlus'
 import  { faFilm} from '@fortawesome/free-solid-svg-icons/faFilm'
+import  { faX} from '@fortawesome/free-solid-svg-icons/faX'
+
 import { List } from 'src/app/shared/interfaces/list.interface';
 import { Card } from 'src/app/shared/interfaces/card.interface';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent {
+export class BoardComponent implements AfterViewChecked {
   faEllipsis = faEllipsis;
   faPen = faPen;
   faPlus = faPlus;
   faFilm = faFilm;
+  faX=faX;
+  listTitle = new FormControl<string>("",{ validators: Validators.required,nonNullable:true});
+  constructor (){}
+  ngAfterViewChecked(): void {
+    if(this.textarea) this.textarea.nativeElement.focus();
+  }
+
+   
+
+  @ViewChild('textarea') textarea?:ElementRef;
+  
+  isClicked:boolean = false;
 
   myList:List[] = [
     {
@@ -87,5 +102,27 @@ export class BoardComponent {
       );
     }
 
+  }
+
+  toggleButton(){
+    this.isClicked=!this.isClicked;
+    
+  }
+  addList(){
+    console.log(this.listTitle);
+    
+    if(this.listTitle.untouched) return this.listTitle.markAllAsTouched();
+    if(this.listTitle.valid){
+      this.myList.push(
+        {
+          title: this.listTitle.value,
+          cards:[],
+          isAchived:false
+        }
+      )
+      return this.listTitle.reset();
+    }
+  
+    return window.alert(" ingrese un valor valido")
   }
 }
