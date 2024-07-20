@@ -3,7 +3,8 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: .8rem;
-    border-bottom: .2rem solid var(--dark-neutral-color);
+    /* border-bottom: .2rem solid var(--dark-neutral-color); */
+    background-color: var(--bg-color,#fff);
     height: var(--navbar-height);
 }
 .nav__items{
