@@ -1,9 +1,6 @@
-app-navbar{
-    background-color: #594e37;
-}
+
 .board{
     height: calc( 100vh - var(--navbar-height));
-    /* background-color: rgb(81, 174, 255); */
     background-image: url(https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2409x1600/80b8b9480563c879771ae4e4442b25d1/photo-1675889335685-4ac82f1e47ad.jpg);
     background-repeat: no-repeat;
     background-position: center;
