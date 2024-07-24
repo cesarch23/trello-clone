@@ -15,7 +15,7 @@ import { FormControl, Validators } from '@angular/forms';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements AfterViewChecked {
+export class BoardComponent {
   faEllipsis = faEllipsis;
   faPen = faPen;
   faPlus = faPlus;
@@ -23,15 +23,9 @@ export class BoardComponent implements AfterViewChecked {
   faX=faX;
   listTitle = new FormControl<string>("",{ validators: Validators.required,nonNullable:true});
   constructor (){}
-  ngAfterViewChecked(): void {
-    if(this.textarea) this.textarea.nativeElement.focus();
-  }
-
-   
-
-  @ViewChild('textarea') textarea?:ElementRef;
   
   isClicked:boolean = false;
+  keyPressAddTocard:boolean = false;
 
   myList:List[] = [
     {
@@ -40,8 +34,95 @@ export class BoardComponent implements AfterViewChecked {
         { title:'Practice mindfulness', 
           coverWithColor:'#fff'
         },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        { title:'Practice mindfulness', 
+          coverWithColor:'#fff'
+        },
+        
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
         { title:'Stay updated with industry news', 
           coverWithImg:'https://images.unsplash.com/photo-1721041011353-298585b7c8f6?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Stay updated with industry news', 
+          coverWithImg:'https://images.unsplash.com/photo-1721041011353-298585b7c8f6?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+       
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book', 
+          coverWithColor:'#ffdcb8'
+        },
+        { title:'Read a book read a book ', 
+          coverWithColor:'#ffdcb8'
         },
         { title:'Read a book', 
           coverWithColor:'#ffdcb8'
@@ -53,6 +134,39 @@ export class BoardComponent implements AfterViewChecked {
       title:'doing',
       cards:[ 
         { title:'Check and respond to emails', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects ', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
+          coverWithColor:'#fff'
+        },
+        { title:'Complete assigned tasks or projects', 
           coverWithColor:'#fff'
         },
         { title:'Complete assigned tasks or projects', 
@@ -109,7 +223,6 @@ export class BoardComponent implements AfterViewChecked {
     
   }
   addList(){
-    console.log(this.listTitle);
     
     if(this.listTitle.untouched) return this.listTitle.markAllAsTouched();
     if(this.listTitle.valid){
@@ -124,5 +237,11 @@ export class BoardComponent implements AfterViewChecked {
     }
   
     return window.alert(" ingrese un valor valido")
+  }
+  addCard(index:number){
+
+  }
+  toggleFormAddCard(event:Event,i:number){
+       
   }
 }

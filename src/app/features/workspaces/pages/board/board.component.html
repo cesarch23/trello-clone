@@ -1,49 +1,67 @@
-<div class="lists" cdkDropListGroup >
-    <div *ngFor="let list of myList" class="list"  >
-        <div class="list__heading">
-            <button class="list__name">{{ list.title}} </button>
-            <button class="list__actions">
-                <fa-icon class="fa-light fa-lg" [icon]="faEllipsis"  ></fa-icon>
-            </button>
-        </div>
-        <div class="list__cards" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="list.cards!" >
-            <div class="card" cdkDrag *ngFor="let card of list.cards ; let ind = index" 
-                [style]="changeBackground(card)"
-                >
-                <a class="card__title"  [style.color]="card.coverWithImg?'#fff':''" >{{ card.title }} </a>
-                <button class="card__button-edit">
-                    <fa-icon class="fa-xs" [icon]="faPen" ></fa-icon>
+ 
+    <div class="lists" cdkDropListGroup >
+        <div *ngFor="let list of myList; let i = index" class="list"  >
+            <div class="list__heading">
+                <button class="list__name">{{ list.title}} </button>
+                <button class="list__actions">
+                    <fa-icon class="fa-light fa-lg" [icon]="faEllipsis"  ></fa-icon>
                 </button>
             </div>
-        </div>
-        <div class="list__footer">
-            <button class="list__add-button">
-                <fa-icon class="fa-lg" [icon]="faPlus"></fa-icon>
-                Add a card
-            </button>
-            <button class="list__create-temp-button">
-                <fa-icon class="fa-sm" [icon]="faFilm" title="create from template" ></fa-icon>
-            </button>
-        </div>
-
-    </div>
-
-    <div class="list list--padding" >
-        <button class="add-button-list" [style.display]=" isClicked ? 'none':''"  (click)="toggleButton()" >
-                <fa-icon class="fa-lg" [icon]="faPlus"></fa-icon>
-                Add another list
-        </button>
-        
-        <form action="#" class="form" [style.display]="isClicked ? 'flex':'none'"  >
-                <textarea [formControl]="listTitle" name="title2" #textarea class="form__input" placeholder="Enter list title..." rows="1"></textarea>
-                <div class="form__actions">
-                    <button class="form__submit" type="button" (click)="addList()" >Add list</button>
-                    <button class="form__cancel" type="reset" (click)="toggleButton()">
-                        <fa-icon class="fa-1x" [icon]="faX"></fa-icon>
+            <div [id]="'list'+i" class="list__cards" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="list.cards!" >
+               
+                <div class="card" cdkDrag *ngFor="let card of list.cards ; let ind = index"
+                [style]="changeBackground(card)"
+                    >
+                    <a class="card__title" [style.color]="card.coverWithImg?'#fff':''"  >{{ card.title }} </a>
+                    <button class="card__button-edit" >
+                        <fa-icon class="fa-xs" [icon]="faPen" title="edit card" ></fa-icon>
                     </button>
                 </div>
-        </form>
-        
+
+                <!-- form -->
+                <form [id]="'form'+i" action="#" class="card-form " >
+                    <input  value=""
+                        class="card-form__input" placeholder="Enter list title..." rows="1">
+                    
+                    <div class="card-form__actions">
+                        <button class="card-form__submit" type="button" (click)="addCard(i)" >Add card</button>
+                        <button class="card-form__cancel" type="reset" >
+                            <fa-icon class="fa-1x" [icon]="faX"></fa-icon>
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- end card form -->
+            </div>
+            <div class="list__footer" [style.display]=" keyPressAddTocard?'none':'' "  >
+                <button class="list__add-button" (click)="toggleFormAddCard($event,i)" >
+                    <fa-icon class="fa-lg" [icon]="faPlus"></fa-icon>
+                    Add a card
+                </button>
+                <button class="list__create-temp-button">
+                    <fa-icon class="fa-sm" [icon]="faFilm" title="create from template" ></fa-icon>
+                </button>
+            </div>
+    
+        </div>
+    
+        <div class="list list--padding" >
+            <button class="add-button-list" [style.display]=" isClicked ? 'none':''"  (click)="toggleButton()" >
+                    <fa-icon class="fa-lg" [icon]="faPlus"></fa-icon>
+                    Add another list
+            </button>
+    
+            <form action="#" class="form" [style.display]="isClicked ? 'flex':'none'"  >
+                    <textarea [formControl]="listTitle" name="title2" #textarea class="form__input" placeholder="Enter list title..." rows="1"></textarea>
+                    <div class="form__actions">
+                        <button class="form__submit" type="button" (click)="addList()" >Add list</button>
+                        <button class="form__cancel" type="reset" (click)="toggleButton()">
+                            <fa-icon class="fa-1x" [icon]="faX"></fa-icon>
+                        </button>
+                    </div>
+            </form>
+    
+        </div>
+    
     </div>
 
-</div>

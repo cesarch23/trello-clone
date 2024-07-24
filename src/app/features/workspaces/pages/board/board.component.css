@@ -1,3 +1,4 @@
+
 .lists{
     padding: 1.2rem;
     display: flex;
@@ -96,6 +97,11 @@
 }
 .card__title{
     color:var(--color-heading, #172b4d) ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    /* TODO: AL CREAR COLAPSAR LOS CARD DE LA SEGUNDA COLUMNA NO SE APRECIA EL SCROLL HASTA MOVER UN CARD */
 }
 .card__button-edit{
     color:var(--color-heading, #172b4d) ;
@@ -167,13 +173,20 @@
 
   /* form to add list */
 
-  .form{
+  .form,
+  .card-form
+  {
     display: none;
     flex-direction: column;
     gap: .8rem;
 
   }
-  .form__input{
+  .card-form.active{
+    display: flex;
+  }
+  .form__input,
+  .card-form__input
+  {
     display: block;
     width: 100%;
     min-height: 3rem;
@@ -195,12 +208,16 @@
     overflow: hidden;
     
   }
-  .form__actions{
+  .form__actions,
+  .card-form__actions
+  {
     display: flex;
     gap: 1.6rem;
     align-items: center;
   }
-  .form__submit{
+  .form__submit,
+  .card-form__submit
+  {
     font-size: 1.4rem;
     font-weight:600;
     border: none;
@@ -211,15 +228,23 @@
     color: #fff;
     cursor: pointer;
   }
-  .form__submit:hover{
+  .form__submit:hover,
+  .card-form__submit:hover
+  {
     background-color: var(--dark-blue-color);
   }
-  .form__cancel{
+  .form__cancel,
+  .card-form__cancel
+  {
     border: none;
     cursor: pointer;
     padding: .6rem 1rem;
   }
-  .form__cancel:hover{
+  .form__cancel:hover,
+  .card-form__cancel:hover
+  {
     background-color: #091e4224;
     border-radius: .4rem;
   }
+
+ 
