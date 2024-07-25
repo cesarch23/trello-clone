@@ -1,139 +1,141 @@
-<div class="dialog">
-    <div class="dialog__header">
-        <div class="dialog__details">
-            <fa-icon class="dialog__icon-title" [icon]="faHardDrive" ></fa-icon>
-            <input class="dialog__card-title" type="text" [value]="data.card.title">
-            <p>in list <a class="dialog__list-title" href="#"> {{ data.list }} </a></p>
+ 
+    <div class="dialog">
+        <div class="dialog__header">
+            <div class="dialog__details">
+                <fa-icon class="dialog__icon-title" [icon]="faHardDrive" ></fa-icon>
+                <input class="dialog__card-title" type="text" [value]="data.card.title">
+                <p>in list <a class="dialog__list-title" href="#"> {{ data.list }} </a></p>
+            </div>
+            <button class="dialog__close-button" (click)="closeDialog()" >
+                <fa-icon class="dialog__close-icon" [icon]="faXmark" title="close dialog" ></fa-icon>
+            </button>
         </div>
-        <button class="dialog__close-button" (click)="closeDialog()" >
-            <fa-icon class="dialog__close-icon" [icon]="faXmark" title="close dialog" ></fa-icon>
-        </button>
-    </div>
-    <div class="dialog__body">
-        <div class="content">
-            <div class="content__notify">
-                <div>
-                    <p class="subtitle">Notifications</p>
-                    <button class="content__notify-button btn">
-                        <fa-icon [icon]="faEye"></fa-icon>
-                        <span>Watching</span>
-                        <fa-icon [icon]="faSquareCheck"></fa-icon>
-                    </button>
-                </div>
-            </div>
-            <div class="content__description">
-                <div class="content__description-header">
-                    <fa-icon class="content__description-icon" [icon]="faBarsStaggered" title="description" ></fa-icon>
-                    <h3>Description</h3>
-                    <button class="btn">
-                        Edit
-                    </button>
-                </div>
-                <div class="content__description-text">
-                    <button class="content__description-btn btn" type="button" >Add a more detailed description...</button>
-                    <p> This is my description added</p>
-                    <form class="content__form" action="#">
-                        <textarea class="content__form-textarea" name="comment" id="comment" placeholder="Write a comment"></textarea>
-                        
-                        <div class="content__form-buttons">
-                            <div class="content__form-action-buttons">
-                                <button class="content__form-save-button btn" type="button">Save</button>
-                                <button class="btn" type="button">Cancel</button>
-                            </div>
-                            <a href="#" class="content__form-help-button btn"> Formatting help</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="content__activity">
-                <div class="content__activity-header">
-                    <fa-icon class="content__activity-icon" [icon]="faListUl" ></fa-icon>
-                    <h3>Activity</h3>
-                    <button class="content__activity-hide-details btn">
-                        Hide details
-                    </button>
-                </div>
-                <div class="content__activity-text">
-                    <div class="content__activity-account">
-                        CC
+        <div class="dialog__body">
+            <div class="content">
+                <div class="content__notify">
+                    <div>
+                        <p class="subtitle">Notifications</p>
+                        <button class="content__notify-button btn">
+                            <fa-icon [icon]="faEye"></fa-icon>
+                            <span>Watching</span>
+                            <fa-icon [icon]="faSquareCheck"></fa-icon>
+                        </button>
                     </div>
-                    <button class="content__activity-add-comment">
-                        Write a comment
-                    </button>                
+                </div>
+                <div class="content__description">
+                    <div class="content__description-header">
+                        <fa-icon class="content__description-icon" [icon]="faBarsStaggered" title="description" ></fa-icon>
+                        <h3>Description</h3>
+                        <button class="btn">
+                            Edit
+                        </button>
+                    </div>
+                    <div class="content__description-text">
+                        <button class="content__description-btn btn" type="button" >Add a more detailed description...</button>
+                        <p> This is my description added</p>
+                        <form class="content__form" action="#">
+                            <textarea class="content__form-textarea" name="comment" id="comment" placeholder="Write a comment"></textarea>
+    
+                            <div class="content__form-buttons">
+                                <div class="content__form-action-buttons">
+                                    <button class="content__form-save-button btn" type="button">Save</button>
+                                    <button class="btn" type="button">Cancel</button>
+                                </div>
+                                <a href="#" class="content__form-help-button btn"> Formatting help</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="content__activity">
+                    <div class="content__activity-header">
+                        <fa-icon class="content__activity-icon" [icon]="faListUl" ></fa-icon>
+                        <h3>Activity</h3>
+                        <button class="content__activity-hide-details btn">
+                            Hide details
+                        </button>
+                    </div>
+                    <div class="content__activity-text">
+                        <div class="content__activity-account">
+                            CC
+                        </div>
+                        <button class="content__activity-add-comment">
+                            Write a comment
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="sidenav">
+                <p class="sidenav__subtitle" >Add to card</p>
+                <div class="sidenav__buttons">
+                    <button class="btn">
+                        <fa-icon [icon]="faUser" ></fa-icon>
+                        Members
+                    </button>
+                    <button class="btn">
+                        <fa-icon style="rotate: -90deg;" [icon]="faTags"></fa-icon>
+                        Labels
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faSquareCheck" ></fa-icon>
+                        Checklists
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faClock"></fa-icon>
+                        Dates
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faPaperclip" ></fa-icon>
+                        Attachment
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faImage" ></fa-icon>
+                        Cover
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faSquare" ></fa-icon>
+                        Custom Fields
+                    </button>
+                </div>
+                <p class="sidenav__subtitle" >Power-Ups</p>
+                <div class="sidenav__buttons">
+                    <button class="btn">
+                        <fa-icon [icon]="faPlus" ></fa-icon>
+                        Add Power-Ups
+                    </button>
+                </div>
+                <p class="sidenav__subtitle" >Atomation</p>
+                <div class="sidenav__buttons">
+                    <button class="btn">
+                        <fa-icon [icon]="faPlus" ></fa-icon>
+                        Add button
+                    </button>
+                </div>
+                <p class="sidenav__subtitle" >Actions</p>
+                <div class="sidenav__buttons sidenav__action-buttons">
+                    <button class="btn">
+                        <fa-icon [icon]="faArrowRight"></fa-icon>
+                        Move
+                    </button>
+                    <button class="btn">
+                        <fa-icon  [icon]="faCopy" ></fa-icon>
+                        Copy
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faClone"></fa-icon>
+                        Make template
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faBoxArchive" ></fa-icon>
+                        Achive
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faShareNodes"></fa-icon>
+                        Share
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="sidenav">
-            <p class="sidenav__subtitle" >Add to card</p>
-            <div class="sidenav__buttons">
-                <button class="btn">
-                    <fa-icon [icon]="faUser" ></fa-icon>
-                    Members
-                </button>
-                <button class="btn">
-                    <fa-icon style="rotate: -90deg;" [icon]="faTags"></fa-icon>
-                    Labels
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faSquareCheck" ></fa-icon>
-                    Checklists
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faClock"></fa-icon>
-                    Dates
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faPaperclip" ></fa-icon>
-                    Attachment
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faImage" ></fa-icon>
-                    Cover
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faSquare" ></fa-icon>
-                    Custom Fields
-                </button>
-            </div>
-            <p class="sidenav__subtitle" >Power-Ups</p>
-            <div class="sidenav__buttons">
-                <button class="btn">
-                    <fa-icon [icon]="faPlus" ></fa-icon>
-                    Add Power-Ups
-                </button>
-            </div>
-            <p class="sidenav__subtitle" >Atomation</p>
-            <div class="sidenav__buttons">
-                <button class="btn">
-                    <fa-icon [icon]="faPlus" ></fa-icon>
-                    Add button
-                </button>
-            </div>
-            <p class="sidenav__subtitle" >Actions</p>
-            <div class="sidenav__buttons sidenav__action-buttons">
-                <button class="btn">
-                    <fa-icon [icon]="faArrowRight"></fa-icon>
-                    Move
-                </button>
-                <button class="btn">
-                    <fa-icon  [icon]="faCopy" ></fa-icon>
-                    Copy
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faClone"></fa-icon>
-                    Make template
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faBoxArchive" ></fa-icon>
-                    Achive
-                </button>
-                <button class="btn">
-                    <fa-icon [icon]="faShareNodes"></fa-icon>
-                    Share
-                </button>
-            </div>
-        </div>
-    </div>
-
     
-</div>
+    
+    </div>
+ 

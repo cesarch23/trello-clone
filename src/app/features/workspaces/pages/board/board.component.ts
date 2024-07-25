@@ -11,6 +11,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { FormControl, Validators } from '@angular/forms';
 import { Dialog } from '@angular/cdk/dialog';
 import { CardDialogComponent } from '../../component/card-dialog/card-dialog.component';
+import { ScrollStrategyOptions } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-board',
@@ -24,7 +25,9 @@ export class BoardComponent {
   faFilm = faFilm;
   faX=faX;
   listTitle = new FormControl<string>("",{ validators: Validators.required,nonNullable:true});
-  constructor (public cardDialog:Dialog){}
+  constructor (
+                public cardDialog:Dialog )
+                {}
   
   isClicked:boolean = false;
   keyPressAddTocard:boolean = false;
@@ -249,8 +252,9 @@ export class BoardComponent {
 
   openCardDialog(card:Card, listTitle:String){
     this.cardDialog.open(CardDialogComponent,{
-      minWidth:'90%',
-      maxWidth:'768px',
+      // minWidth:'200px',
+      // maxWidth:'800px',
+      // maxHeight:'600px'
       data:{
         card:card,
         list:listTitle
