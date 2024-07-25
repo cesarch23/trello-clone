@@ -9,6 +9,8 @@ import { List } from 'src/app/shared/interfaces/list.interface';
 import { Card } from 'src/app/shared/interfaces/card.interface';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { FormControl, Validators } from '@angular/forms';
+import { Dialog } from '@angular/cdk/dialog';
+import { CardDialogComponent } from '../../component/card-dialog/card-dialog.component';
 
 @Component({
   selector: 'app-board',
@@ -22,7 +24,7 @@ export class BoardComponent {
   faFilm = faFilm;
   faX=faX;
   listTitle = new FormControl<string>("",{ validators: Validators.required,nonNullable:true});
-  constructor (){}
+  constructor (public cardDialog:Dialog){}
   
   isClicked:boolean = false;
   keyPressAddTocard:boolean = false;
@@ -244,4 +246,19 @@ export class BoardComponent {
   toggleFormAddCard(event:Event,i:number){
        
   }
+
+  openCardDialog(card:Card, listTitle:String){
+    this.cardDialog.open(CardDialogComponent,{
+      minWidth:'90%',
+      maxWidth:'768px',
+      data:{
+        card:card,
+        list:listTitle
+      }
+    })
+  }
+
+
+
+
 }

@@ -10,10 +10,11 @@
             <div [id]="'list'+i" class="list__cards" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="list.cards!" >
                
                 <div class="card" cdkDrag *ngFor="let card of list.cards ; let ind = index"
-                [style]="changeBackground(card)"
+                    [style]="changeBackground(card)"
+                    (click)="openCardDialog(card,list.title)"
                     >
                     <a class="card__title" [style.color]="card.coverWithImg?'#fff':''"  >{{ card.title }} </a>
-                    <button class="card__button-edit" >
+                    <button class="card__button-edit"  >
                         <fa-icon class="fa-xs" [icon]="faPen" title="edit card" ></fa-icon>
                     </button>
                 </div>
@@ -38,7 +39,7 @@
                     <fa-icon class="fa-lg" [icon]="faPlus"></fa-icon>
                     Add a card
                 </button>
-                <button class="list__create-temp-button">
+                <button class="list__create-temp-button" >
                     <fa-icon class="fa-sm" [icon]="faFilm" title="create from template" ></fa-icon>
                 </button>
             </div>
