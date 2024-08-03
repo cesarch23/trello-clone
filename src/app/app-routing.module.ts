@@ -5,7 +5,7 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
 
 const routes: Routes = [
   {
-    path:'login',
+    path:'auth',
     loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo:'admin',
+    redirectTo:'auth',
     //esto es mandatorio ojo si cambia a login
     pathMatch:'full'
   },
