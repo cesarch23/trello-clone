@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SharedModule } from '../shared/shared.module';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
     
   ]
 })

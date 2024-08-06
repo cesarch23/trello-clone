@@ -11,8 +11,7 @@ export class AuthService {
 
   login(email:string, password:string)
   {
-    this.http.post(`${API_URL}/auth/login`, { email, password })
-    
+    return this.http.post(`${API_URL}/auth/login`,{ email, password })
   }
 
 }

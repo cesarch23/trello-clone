@@ -8,10 +8,21 @@
             <img src="/assets/images/logo/Trello/trello-logo-gradient-blue-attribution_rgb.svg" alt="trello logo">
         </header>
         <span class="login__subtitle">Inicia sesión para continuar</span>
-        <form action="#" class="form">
-            <input class="form__field" type="text" placeholder="Introduce tu correo electrónico">
-            <input class="form__field" type="text" placeholder="Introduce tu contraseña">
-            <app-btn [typeButton]="'submit'" routerLink="/boards/board" > log in </app-btn>
+        <form [formGroup]="myform" action="#" class="form">
+            <input formControlName="email" class="form__field" type="text" placeholder="Introduce tu correo electrónico">
+            <p class="form__error" *ngIf="isInvalidField('email')" > 
+                {{ showErrorMessage('email')}}  
+            </p>
+            <input formControlName="password" class="form__field" type="password" placeholder="Introduce tu contraseña">
+            <p class="form__error" *ngIf="isInvalidField('password')" > 
+                {{ showErrorMessage('password') }}  
+            </p>
+            <p class="form__error" *ngIf="formStatus === 'failed'" > 
+                Ingrese datos validos 
+            </p>
+            <app-btn [typeButton]="'submit'" [loader]="formStatus === 'loading'? true : false"  (click)="submit()"> 
+                Log in 
+            </app-btn>
         </form>
         <span class="login__subtitle login__subtitle-color">O continúa con: </span>
         <div class="social">

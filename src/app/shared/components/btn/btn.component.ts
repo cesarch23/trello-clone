@@ -9,5 +9,5 @@ export class BtnComponent {
 
   @Input() typeButton:'submit'  | 'reset' | 'button' = 'button';
   
-  
+  @Input() loader: boolean=false;
 }
