@@ -20,7 +20,7 @@
             <p class="form__error" *ngIf="formStatus === 'failed'" > 
                 Ingrese datos validos 
             </p>
-            <app-btn [typeButton]="'submit'" [loader]="formStatus === 'loading'? true : false"  (click)="submit()"> 
+            <app-btn [typeButton]="'submit'" [loader]="formStatus === 'loading'? true : false" [actived]="myform.valid?false:true"  (click)="submit()"> 
                 Log in 
             </app-btn>
         </form>
