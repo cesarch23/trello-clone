@@ -9,7 +9,6 @@ import { SharedModule } from '../shared/shared.module';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AuthLayoutComponent,

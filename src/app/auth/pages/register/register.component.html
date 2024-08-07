@@ -1,1 +1,70 @@
-<p>register works!</p>
+<div class="login">
+    <div class="login__background">
+        <img class="login__background-img login__background--left" src="/assets/svg/app.svg" alt="app">
+        <img class="login__background-img login__background--right" src="/assets/svg/slider.svg" alt="slider ">
+    </div>
+    <div class="login__content">
+        <header class="login__logo">
+            <img src="/assets/images/logo/Trello/trello-logo-gradient-blue-attribution_rgb.svg" alt="trello logo">
+        </header>
+        <span class="login__subtitle">Enter your data</span>
+        <form [formGroup]="registerForm" action="#" class="form">
+            <input formControlName="name" class="form__field" type="text" placeholder="Enter your name here">
+            <p class="form__error" *ngIf="isInvalidField('name')" > 
+                {{ showErrorMessage('name')}}  
+            </p>
+            <input formControlName="email" class="form__field" type="text" placeholder="Enter your email here">
+            <p class="form__error" *ngIf="isInvalidField('email')" > 
+                {{ showErrorMessage('email') }}  
+            </p>
+            <input formControlName="password" class="form__field" type="password" placeholder="Enter your password here">
+            <p class="form__error" *ngIf="isInvalidField('password')" > 
+                {{ showErrorMessage('password') }}  
+            </p>
+            <input formControlName="confirmPassword" class="form__field" type="password" placeholder="Enter your password again here">
+            <p class="form__error" *ngIf="isInvalidField('confirmPassword')" > 
+                {{ showErrorMessage('confirmPassword') }}  
+            </p>
+            <p class="form__error" *ngIf="registerFormStatus === 'failed'" > 
+                {{ showFormError()}}
+            </p>
+            <app-btn [typeButton]="'submit'" [loader]="registerFormStatus === 'loading'? true : false"  (click)="register()"> 
+                Register 
+            </app-btn>
+        </form>
+        <span class="login__subtitle login__subtitle-color">O continúa con: </span>
+        <div class="social">
+            <button class="social__button" type="button">
+                <span class="social__logo">
+                    <img class="social__logo" src="/assets/images/logo/google/google-logo.svg" alt="google logo">
+                </span>
+                <span>Google</span>
+            </button>
+            <button class="social__button" type="button">
+                <span>
+                    <img class="social__logo" src="/assets/images/logo/microsoft/microsoft-logo.svg" alt="microsoft logo">
+                </span>
+                <span>Microsoft</span>
+            </button>
+            <button class="social__button" type="button">
+                <span>
+                    <img class="social__logo" src="/assets/images/logo/apple/apple-logo.svg" alt="apple logo">
+                </span>
+                <span>Apple</span>
+            </button>
+            <button class="social__button" type="button">
+                <span>
+                    <img class="social__logo" src="/assets/images/logo/slack/slack-logo.svg" alt="slack logo">
+                </span>
+                <span>Slack</span>
+            </button>
+
+        </div>
+        <div class="login__options">
+            <a class="login__option" href="/auth/login" >Do you have account?</a>
+        </div>
+        <hr class="login__hr">
+        <div class="login__terms">
+        </div>
+    </div>
+</div>
