@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RequesStatus } from 'src/app/core/models/request-status.model';
@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LoginComponent implements OnInit {
  
+  @Input() email?:string;
   formStatus: RequesStatus;
   constructor(
     private formBuilder: FormBuilder, 
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
+    if(this.email && this.email?.length>0) 
+      this.myform.controls['email'].setValue(this.email);
   }
   isInvalidField(field:string){
      return this.myform.controls[field].errors && this.myform.controls[field].touched;
@@ -57,7 +59,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(email,password).subscribe({
       next: (val) => {
          this.formStatus='success';
-         this.router.navigateByUrl('/admin/boards')
+         this.router.navigateByUrl('/admin/boards');
+         this.myform.reset();
         },
       error: (error)=>{
         this.formStatus='failed'
@@ -67,7 +70,7 @@ export class LoginComponent implements OnInit {
       }
     })
 
-    this.myform.reset();
+   
     
   }
 

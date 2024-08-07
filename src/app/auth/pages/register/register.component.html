@@ -8,7 +8,20 @@
             <img src="/assets/images/logo/Trello/trello-logo-gradient-blue-attribution_rgb.svg" alt="trello logo">
         </header>
         <span class="login__subtitle">Enter your data</span>
-        <form [formGroup]="registerForm" action="#" class="form">
+        <form *ngIf="!showFormRegister" [formGroup]="formEmailValidation" action="#" class="form" >
+            <input type="text" placeholder="Enter your email here" class="form__field" formControlName="email">
+            <p class="form__error" *ngIf="formEmailValidationStatus==='failed'">
+                 Ocurrio un error en nuestro servidor, intentelo mas tarde.
+            </p>
+            <app-btn [typeButton]="'submit'" 
+                [loader]="formEmailValidationStatus === 'loading'? true : false" 
+                [actived]="formEmailValidation.valid?false:true" 
+                (click)="validarEmail()"> 
+                Continue 
+            </app-btn>
+        </form>
+
+        <form *ngIf="showFormRegister" [formGroup]="registerForm" action="#" class="form" >
             <input formControlName="name" class="form__field" type="text" placeholder="Enter your name here">
             <p class="form__error" *ngIf="isInvalidField('name')" > 
                 {{ showErrorMessage('name')}}  

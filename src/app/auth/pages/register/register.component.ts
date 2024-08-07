@@ -13,6 +13,8 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class RegisterComponent {
   registerFormStatus: RequesStatus;
+  showFormRegister:boolean=false;
+  formEmailValidationStatus: RequesStatus;
   mistake:HttpErrorResponse = new HttpErrorResponse({});
 
   constructor(
@@ -21,7 +23,7 @@ export class RegisterComponent {
     private router: Router
   ){
     this.registerFormStatus= 'init';
-    
+    this.formEmailValidationStatus= 'init';
   }
 
   registerForm: FormGroup = this.formBuilder.nonNullable.group({
@@ -30,6 +32,11 @@ export class RegisterComponent {
     password:["", [Validators.required,Validators.minLength(8)]],
     confirmPassword:["",[Validators.required, Validators.minLength(8)]]
   })
+
+  formEmailValidation:FormGroup = this.formBuilder.nonNullable.group({
+    email: ["",[Validators.required, Validators.pattern(/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/)]]
+  })
+
   isInvalidField(field:string){
     return this.registerForm.controls[field].errors && this.registerForm.controls[field].touched; 
   }
@@ -50,6 +57,33 @@ export class RegisterComponent {
         return 'Your password must be have more than 8 letters';
      return "Error on our server, try again later";
   }
+  validarEmail(){
+    console.log(this.formEmailValidation)
+    if(this.formEmailValidation.invalid)
+    {
+      this.formEmailValidation.markAllAsTouched();
+      return;
+    }
+    this.formEmailValidationStatus='loading'
+    const { email } = this.formEmailValidation.getRawValue();
+    
+    this.authService.isAvailableEmail(email).subscribe({
+      next:(value)=>{
+        console.log(value)
+        this.formEmailValidationStatus='success'
+        if(value.isAvailable){
+          this.showFormRegister=true;
+          this.registerForm.controls['email'].setValue(email);
+        }else{
+          this.router.navigate(['/auth/login/'],{queryParams: {email:email}})
+        }
+
+      },
+      error:()=>{
+        this.formEmailValidationStatus='failed'
+      }
+    })
+  }
 
   register( ){
    
@@ -64,7 +98,7 @@ export class RegisterComponent {
         this.registerFormStatus = 'success';
         this.registerForm.reset();
         this.router.navigate(["/auth/login"]);
-  
+        
       },
       error: (error)=>{
         this.mistake = error;
@@ -78,6 +112,7 @@ export class RegisterComponent {
     })
   }
  
+
 
 
 }

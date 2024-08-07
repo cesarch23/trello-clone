@@ -7,6 +7,7 @@ const API_URL = environment.API_URL;
   providedIn: 'root'
 })
 export class AuthService {
+  
   constructor(private http: HttpClient) { }
 
   login(email:string, password:string)
@@ -16,6 +17,9 @@ export class AuthService {
   register(name:string, email:string, password:string)
   {
     return this.http.post(`${API_URL}/auth/register`,{email,password,name});
+  }
+  isAvailableEmail(email:string){
+    return this.http.post<{isAvailable: boolean}>(`${API_URL}/auth/is-available`,{email});
   }
 
 }
