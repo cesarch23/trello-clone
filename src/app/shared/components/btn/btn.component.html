@@ -1,4 +1,4 @@
-<button class="button" [type]="typeButton" >
+<button class="button" [type]="typeButton" [disabled]="actived" >
     <div *ngIf="loader" class="loader"></div>
     <ng-content *ngIf="!loader"></ng-content>
 </button>

@@ -28,7 +28,10 @@
             <p class="form__error" *ngIf="registerFormStatus === 'failed'" > 
                 {{ showFormError()}}
             </p>
-            <app-btn [typeButton]="'submit'" [loader]="registerFormStatus === 'loading'? true : false"  (click)="register()"> 
+            <app-btn [typeButton]="'submit'" 
+                [loader]="registerFormStatus === 'loading'? true : false" 
+                [actived]="registerForm.valid?false:true" 
+                (click)="register()"> 
                 Register 
             </app-btn>
         </form>

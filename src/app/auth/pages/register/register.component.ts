@@ -21,6 +21,7 @@ export class RegisterComponent {
     private router: Router
   ){
     this.registerFormStatus= 'init';
+    
   }
 
   registerForm: FormGroup = this.formBuilder.nonNullable.group({
@@ -51,8 +52,7 @@ export class RegisterComponent {
   }
 
   register( ){
-    console.log(this.registerForm)
-    
+   
     if(this.registerForm.invalid) { 
       this.registerForm.markAllAsTouched();
       return;
