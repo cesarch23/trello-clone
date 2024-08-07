@@ -58,7 +58,6 @@ export class RegisterComponent {
      return "Error on our server, try again later";
   }
   validarEmail(){
-    console.log(this.formEmailValidation)
     if(this.formEmailValidation.invalid)
     {
       this.formEmailValidation.markAllAsTouched();
@@ -69,7 +68,6 @@ export class RegisterComponent {
     
     this.authService.isAvailableEmail(email).subscribe({
       next:(value)=>{
-        console.log(value)
         this.formEmailValidationStatus='success'
         if(value.isAvailable){
           this.showFormRegister=true;
