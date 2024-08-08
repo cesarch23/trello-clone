@@ -95,13 +95,15 @@ export class RegisterComponent {
       next: (value)=>{
         this.registerFormStatus = 'success';
         this.registerForm.reset();
-        this.router.navigate(["/auth/login"]);
+        //TODO: SHOW NOTIFICATION
+        this.authService.login(email,password).subscribe({
+            next :()=>this.router.navigate(["/admin"]),
+            error:()=>this.router.navigate(["/auth/login"])
+          })
         
       },
       error: (error)=>{
-        this.mistake = error;
         this.registerFormStatus = 'failed';
-        console.log(error);
         setTimeout(()=>{
           this.registerFormStatus = 'init';
         },3000)
