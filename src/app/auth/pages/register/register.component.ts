@@ -4,7 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RequesStatus } from 'src/app/core/models/request-status.model';
 import { AuthService } from 'src/app/core/services/auth.service';
-
+import { showToast } from 'src/app/shared/utils/notification';
+const body = document.querySelector('body') as HTMLBodyElement;
+const noitfication = document.querySelector('.notification') as HTMLParagraphElement;
 
 @Component({
   selector: 'app-register',
@@ -12,6 +14,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+ 
   registerFormStatus: RequesStatus;
   showFormRegister:boolean=false;
   formEmailValidationStatus: RequesStatus;
@@ -82,9 +85,9 @@ export class RegisterComponent {
       }
     })
   }
+  
 
-  register( ){
-   
+  register(){
     if(this.registerForm.invalid) { 
       this.registerForm.markAllAsTouched();
       return;
@@ -95,12 +98,13 @@ export class RegisterComponent {
       next: (value)=>{
         this.registerFormStatus = 'success';
         this.registerForm.reset();
-        //TODO: SHOW NOTIFICATION
+        showToast("Sus datos se registraron de manera exitosa");
         this.authService.login(email,password).subscribe({
             next :()=>this.router.navigate(["/admin"]),
-            error:()=>this.router.navigate(["/auth/login"])
+            error:()=>{
+              showToast("Sus datos se registraron de manera exitosa. Ahora, intente iniciar sesión");
+              this.router.navigate(["/auth/login"])}
           })
-        
       },
       error: (error)=>{
         this.registerFormStatus = 'failed';

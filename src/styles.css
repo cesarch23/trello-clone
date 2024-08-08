@@ -95,4 +95,14 @@ p{
         font-size: 1.4rem;
     }
 }
+.notification{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    padding: .8rem 1.6rem;
+    color: #fff;
+    font-weight: 500;
+    background: -webkit-linear-gradient(90deg, #0bfed7,#00d8f9,#32aaf0);
+    background: linear-gradient(90deg, #0bfed7,#00d8f9,#32aaf0);                                            
+}
  
