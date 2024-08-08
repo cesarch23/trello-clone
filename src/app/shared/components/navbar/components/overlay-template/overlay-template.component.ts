@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import {faAngleDown } from '@fortawesome/free-solid-svg-icons/faAngleDown'
-import {faAngleUp } from '@fortawesome/free-solid-svg-icons/faAngleUp'
+import {faAngleDown,faAngleUp } from '@fortawesome/free-solid-svg-icons'
+
 @Component({
   selector: 'app-overlay-template',
   templateUrl: './overlay-template.component.html',

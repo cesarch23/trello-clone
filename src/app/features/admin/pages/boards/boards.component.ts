@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { Board } from 'src/app/shared/interfaces/board.interface';
-import { faStar } from '@fortawesome/free-solid-svg-icons/faStar'
-import { faClock } from '@fortawesome/free-solid-svg-icons/faClock'
-import { faFileClipboard } from '@fortawesome/free-solid-svg-icons/faFileClipboard'
-import { faTableCellsLarge } from '@fortawesome/free-solid-svg-icons/faTableCellsLarge'
-import { faUser } from '@fortawesome/free-solid-svg-icons/faUser'
-import { faGear } from '@fortawesome/free-solid-svg-icons/faGear'
-import { faBox } from '@fortawesome/free-solid-svg-icons/faBox'
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons/faInfoCircle'
-import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup'
+import { faStar, faClock,
+         faFileClipboard,
+         faTableCellsLarge,
+         faUser, faGear,
+         faBox, faInfoCircle,
+         faUserGroup
+        } from '@fortawesome/free-solid-svg-icons'
+
 @Component({
   selector: 'app-boards',
   templateUrl: './boards.component.html',

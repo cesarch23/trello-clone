@@ -1,9 +1,9 @@
-import { AfterViewChecked, Component, ElementRef, ViewChild } from '@angular/core';
-import  { faEllipsis} from '@fortawesome/free-solid-svg-icons/faEllipsis'
-import  { faPen} from '@fortawesome/free-solid-svg-icons/faPen'
-import  { faPlus} from '@fortawesome/free-solid-svg-icons/faPlus'
-import  { faFilm} from '@fortawesome/free-solid-svg-icons/faFilm'
-import  { faX} from '@fortawesome/free-solid-svg-icons/faX'
+import { Component } from '@angular/core';
+import { faEllipsis,
+          faPen,faPlus,
+          faFilm, faX
+        } from '@fortawesome/free-solid-svg-icons'
+ 
 
 import { List } from 'src/app/shared/interfaces/list.interface';
 import { Card } from 'src/app/shared/interfaces/card.interface';
@@ -11,7 +11,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { FormControl, Validators } from '@angular/forms';
 import { Dialog } from '@angular/cdk/dialog';
 import { CardDialogComponent } from '../../component/card-dialog/card-dialog.component';
-import { ScrollStrategyOptions } from '@angular/cdk/overlay';
+
 
 @Component({
   selector: 'app-board',
