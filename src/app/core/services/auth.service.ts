@@ -5,6 +5,7 @@ import { switchMap } from 'rxjs';
 import { LoginResponse } from '../models/auth.model';
 import  { tap} from 'rxjs'
 import { TokenService } from './token.service';
+import { Profile } from '../models/profile.model';
 const API_URL = environment.API_URL;
 
 @Injectable({
@@ -42,6 +43,14 @@ export class AuthService {
   
   logout(){
     this.tokenService.removeToken();
+  }
+  getProfile(){
+    const token = this.tokenService.getToken();
+    return this.http.get<Profile>(`${API_URL}/auth/profile`,{
+      headers: {
+        Authorization: `Bearer ${token}` 
+      }
+    })
   }
 
 }

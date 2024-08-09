@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Board } from '../../interfaces/board.interface';
 import { faArrowUpRightFromSquare  } from '@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare';
 import { faChevronRight  } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faUserGroup  } from '@fortawesome/free-solid-svg-icons/faUserGroup';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { Profile } from 'src/app/core/models/profile.model';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   faArrowUpRight=faArrowUpRightFromSquare;
   faChevronRight= faChevronRight;
   faUserGroup=faUserGroup;
   easy:boolean = false;
+  user:Profile | null;
 
   isOpenOverlayProfile:boolean = false;
   isOpenOverlayWorkspaces:boolean=false;
@@ -122,7 +124,14 @@ export class NavbarComponent {
   constructor(
     private authService:AuthService,
   ){
-
+    this.user = null;
+  }
+  ngOnInit(): void {
+    this.authService.getProfile().subscribe({
+      next:(resp)=>{
+        this.user =resp; 
+      }
+    })
   }
 
   toggleProfile(){
@@ -144,6 +153,7 @@ export class NavbarComponent {
     this.authService.logout();
     window.location.reload();
   }
+  
    
 
 }

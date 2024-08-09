@@ -67,7 +67,7 @@
             <img src="/assets/icons/help-icon.svg" alt="help icon">
         </button>
         <button class="nav__profile" (click)="toggleProfile()" cdkOverlayOrigin #profile="cdkOverlayOrigin">
-            <span class="nav__content">CC</span>
+            <span class="nav__content">{{user?.name?.toUpperCase()?.slice(0,2)|| "..." }}</span>
         </button>
          
     </div>
@@ -90,11 +90,11 @@ cdkConnectedOverlayHasBackdrop="true"
         <h4 class="overlay__subtitle">ACCOUNT</h4>
         <div class="account-details">
             <p class="account-details__logo">
-                CC
+                {{ user?.name?.toUpperCase()?.slice(0,2) }}
             </p>
             <div >
-                <p>cesar choccta</p>
-                <p>choccata271@gmail.com</p>
+                <p>{{ user?.name}}</p>
+                <p> {{ user?.email }}</p>
             </div>
         </div>
         <button class="overlay__button">
