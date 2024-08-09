@@ -3,6 +3,7 @@ import { Board } from '../../interfaces/board.interface';
 import { faArrowUpRightFromSquare  } from '@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare';
 import { faChevronRight  } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { faUserGroup  } from '@fortawesome/free-solid-svg-icons/faUserGroup';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -118,6 +119,12 @@ export class NavbarComponent {
   ] 
   arrStarred = this.arrRecents.filter(board=>board.starred)
 
+  constructor(
+    private authService:AuthService,
+  ){
+
+  }
+
   toggleProfile(){
     this.isOpenOverlayProfile= !this.isOpenOverlayProfile;
   }
@@ -132,6 +139,10 @@ export class NavbarComponent {
   }
   toggleTemplate(){
     this.isOpenOverlayTemplate=!this.isOpenOverlayTemplate
+  }
+  logout(){
+    this.authService.logout();
+    window.location.reload();
   }
    
 

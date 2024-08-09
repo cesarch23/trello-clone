@@ -40,7 +40,9 @@ export class AuthService {
     return this.http.post<{isAvailable: boolean}>(`${API_URL}/auth/is-available`,{email});
   }
   
-  
+  logout(){
+    this.tokenService.removeToken();
+  }
 
 }
  
