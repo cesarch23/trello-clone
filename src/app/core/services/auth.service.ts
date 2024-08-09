@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import  { environment} from '@environments/environment'
 import { switchMap } from 'rxjs';
+import { LoginResponse } from '../models/auth.model';
+import  { tap} from 'rxjs'
+import { TokenService } from './token.service';
 const API_URL = environment.API_URL;
 
 @Injectable({
@@ -9,11 +12,19 @@ const API_URL = environment.API_URL;
 })
 export class AuthService {
   
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private tokenService:TokenService
+  ) { }
 
   login(email:string, password:string)
   {
-    return this.http.post(`${API_URL}/auth/login`,{ email, password })
+    return this.http.post<LoginResponse>(`${API_URL}/auth/login`,{ email, password })
+      .pipe(
+        tap({
+          next:(resp)=>{ this.tokenService.saveToken(resp.access_token)}
+        })
+      )
   }
   register(name:string, email:string, password:string)
   {
@@ -28,5 +39,9 @@ export class AuthService {
   isAvailableEmail(email:string){
     return this.http.post<{isAvailable: boolean}>(`${API_URL}/auth/is-available`,{email});
   }
+  
+  
 
 }
+ 
+

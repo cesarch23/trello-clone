@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/pages/login/login.component';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
+import { authGuard } from './core/guards/auth.guard';
+import { redirectGuard } from './core/guards/redirect.guard';
 
 const routes: Routes = [
   {
     path:'auth',
+    canActivate:[redirectGuard],
     loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
     path:'admin',
+    canActivate:[authGuard],
     loadChildren:()=>import('./features/admin/boards.module').then(m=>m.BoardsModule)
   },
   {
     path:'b',
+    canActivate:[authGuard],
     loadChildren:()=>import('./features/workspaces/workspaces.module').then(m=>m.WorkspacesModule)
   },
   {
