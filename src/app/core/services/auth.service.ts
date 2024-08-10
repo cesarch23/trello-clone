@@ -6,6 +6,8 @@ import { LoginResponse } from '../models/auth.model';
 import  { tap} from 'rxjs'
 import { TokenService } from './token.service';
 import { Profile } from '../models/profile.model';
+import { setIsPublicEndpoint } from '../interceptors/token.interceptor';
+
 const API_URL = environment.API_URL;
 
 @Injectable({
@@ -52,9 +54,7 @@ export class AuthService {
   getProfile(){
     const token = this.tokenService.getToken();
     return this.http.get<Profile>(`${API_URL}/auth/profile`,{
-      headers: {
-        Authorization: `Bearer ${token}` 
-      }
+      context: setIsPublicEndpoint()
     }).pipe(
       tap({
         next:(resp)=>{
