@@ -6,13 +6,7 @@ import { AuthService } from './core/services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'trello-clone';
-  constructor (
-    private authService:AuthService,
-  ){}
-
-  ngOnInit(): void {
-    this.authService.getProfile().subscribe();
-  }
+  
 }
