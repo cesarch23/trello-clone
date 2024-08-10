@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   faChevronRight= faChevronRight;
   faUserGroup=faUserGroup;
   easy:boolean = false;
-  user:Profile | null;
+  user:Profile | null =null;
 
   isOpenOverlayProfile:boolean = false;
   isOpenOverlayWorkspaces:boolean=false;
@@ -124,14 +124,11 @@ export class NavbarComponent implements OnInit {
   constructor(
     private authService:AuthService,
   ){
-    this.user = null;
+     
   }
   ngOnInit(): void {
-    this.authService.getProfile().subscribe({
-      next:(resp)=>{
-        this.user =resp; 
-      }
-    })
+    this.authService.profile$.subscribe(resp=>this.user=resp);
+    
   }
 
   toggleProfile(){

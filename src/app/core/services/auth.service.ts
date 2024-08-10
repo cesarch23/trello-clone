@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import  { environment} from '@environments/environment'
-import { switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, switchMap } from 'rxjs';
 import { LoginResponse } from '../models/auth.model';
 import  { tap} from 'rxjs'
 import { TokenService } from './token.service';
@@ -13,10 +13,15 @@ const API_URL = environment.API_URL;
 })
 export class AuthService {
   
+  private profile = new BehaviorSubject<Profile | null>(null);
+  public profile$= this.profile.asObservable();
+  
   constructor(
     private http: HttpClient,
     private tokenService:TokenService
-  ) { }
+  ) { 
+    
+  }
 
   login(email:string, password:string)
   {
@@ -50,7 +55,13 @@ export class AuthService {
       headers: {
         Authorization: `Bearer ${token}` 
       }
-    })
+    }).pipe(
+      tap({
+        next:(resp)=>{
+          this.profile.next(resp)
+        }
+      })
+    )
   }
 
 }

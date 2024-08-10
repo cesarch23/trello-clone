@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./boards-layout.component.css']
 })
 export class BoardsLayoutComponent {
-
+  
 }
